@@ -1,0 +1,108 @@
+<header
+  class='grid grid-cols-1 lg:grid-cols-[1fr_25%] h-screen max-w-screen mx-auto'
+>
+  <div
+    class='grid grid-row-2 grid-cols-1content-between px-5 lg:px-10 py-8 order-2 lg:order-1'
+  >
+    <a
+      href='#'
+      class='hidden lg:block justify-self-start'
+    >
+      <img
+        src='/logo.svg'
+        alt='Logo CentralClima SPA'
+        class='h-[50px]'
+      />
+    </a>
+
+    <div class='text-center lg:text-left grid grid-row-2 gap-5'>
+      <div class='space-y-4 lg:mb-0 grid content-center'>
+        <h1 class='text-2xl lg:text-5xl font-bold text-gray-900 leading-tight'>
+          Climatización perfecta para cada espacio,<br />
+          confort para cada momento.
+        </h1>
+        <p class='text-base lg:text-lg text-gray-600 font-medium'>
+          <span class='text-[#003162]'>Central</span><span
+            class='text-[#CD0000]'>Clima SPA</span
+          >
+          Soluciones inteligentes para hogares y empresas.
+        </p>
+      </div>
+
+      <div
+        class='grid grid-cols-2 align-center lg:flex lg:justify-start lg:items-end lg:align-bottom gap-4 lg:mt-20 justify-center'
+      >
+        <button
+          class='px-4 py-2 text-sm lg:text-base rounded-full border border-gray-100 bg-primary text-gray-800 shadow-md hover:bg-[#002244] hover:text-white transition-all'
+        >
+          Fiabilidad
+        </button>
+        <button
+          class='px-4 py-2 text-sm lg:text-base rounded-full border border-gray-100 bg-white text-gray-800 shadow-md hover:bg-[#002244] hover:text-white transition-all'
+        >
+          Compromiso
+        </button>
+        <button
+          class='px-4 py-2 text-sm lg:text-base rounded-full border border-gray-100 bg-white text-gray-800 shadow-md hover:bg-[#002244] hover:text-white transition-all'
+        >
+          Calidad
+        </button>
+        <button
+          class='px-4 py-2 text-sm lg:text-base rounded-full border border-gray-100 bg-white text-gray-800 shadow-md hover:bg-[#002244] hover:text-white transition-all'
+          '
+        >
+          Experiencia
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <nav
+    class='bg-gradient-to-b from-[#1b1a1b] to-[#2b2b2b] lg:bg-gradient-to-r order-1 lg:order-2 shadow-xl p-8 lg:p-12 grid content-center'
+  >
+    <div class='lg:hidden mb-8 flex justify-center'>
+      <img
+        src='/logo.svg'
+        alt='Logo CentralClima SPA'
+        class='h-[50px]'
+      />
+    </div>
+
+    <details class='dropdown'>
+      <summary class='btn m-1'>
+        <img
+          class='dropdown-open:rotate-180 size-4 w-auto h-[30px]'
+          src='/menu.svg'
+          alt=''
+        />
+      </summary>
+      <ul
+        class='menu dropdown-content bg-base-100 rounded-box z-[1] w-52 p-2 shadow'
+      >
+        <li>
+          <a href='#'>Inicio</a>
+        </li>
+        <li role='menuitem'>
+          <a href='#'>Nosotros</a>
+        </li>
+        <li role='menuitem'>
+          <a href='#'>Contacto</a>
+        </li>
+      </ul>
+    </details>
+  </nav>
+
+  <style>
+    button {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .text-gray-900 {
+      color: #2d2d2d;
+    }
+
+    nav {
+      box-shadow: -8px 0px 30px rgba(0, 0, 0, 0.15);
+    }
+  </style>
+</header>
