@@ -33,7 +33,7 @@
         class='grid grid-cols-2 align-center lg:flex lg:justify-start lg:items-end lg:align-bottom gap-4 lg:mt-20 justify-center'
       >
         <button
-          class='px-4 py-2 text-sm lg:text-base rounded-full border border-gray-100 bg-primary text-gray-800 shadow-md hover:bg-[#002244] hover:text-white transition-all'
+          class='px-4 py-2 text-sm lg:text-base rounded-full border border-gray-100 bg-white text-gray-800 shadow-md hover:bg-[#002244] hover:text-white transition-all'
         >
           Fiabilidad
         </button>
@@ -58,38 +58,43 @@
   </div>
 
   <nav
-    class='bg-gradient-to-b from-[#1b1a1b] to-[#2b2b2b] lg:bg-gradient-to-r order-1 lg:order-2 shadow-xl p-8 lg:p-12 grid content-center'
+    class='bg-gradient-to-b from-[#1b1a1b] to-[#2b2b2b] lg:bg-gradient-to-r order-1 lg:order-2 shadow-xl p-8 lg:p-12 grid content-start lg:justify-end'
   >
-    <div class='lg:hidden mb-8 flex justify-center'>
-      <img
-        src='/logo.svg'
-        alt='Logo CentralClima SPA'
-        class='h-[50px]'
-      />
-    </div>
-
-    <details class='dropdown'>
-      <summary class='btn m-1'>
+    <div class='grid grid-cols-2 justify-end items-end'>
+      <!-- Columna 1: Imagen -->
+      <div class='flex justify-start items-end'>
         <img
-          class='dropdown-open:rotate-180 size-4 w-auto h-[30px]'
-          src='/menu.svg'
-          alt=''
+          src='/logo.svg'
+          alt='Logo CentralClima SPA'
+          class='h-[50px] w-auto lg:hidden'
         />
-      </summary>
-      <ul
-        class='menu dropdown-content bg-base-100 rounded-box z-[1] w-52 p-2 shadow'
-      >
-        <li>
-          <a href='#'>Inicio</a>
-        </li>
-        <li role='menuitem'>
-          <a href='#'>Nosotros</a>
-        </li>
-        <li role='menuitem'>
-          <a href='#'>Contacto</a>
-        </li>
-      </ul>
-    </details>
+      </div>
+
+      <!-- Columna 2: Menu -->
+      <div class='flex justify-end items-end'>
+        <div class='dropdown dropdown-end'>
+          <div
+            tabindex='0'
+            role='button'
+            class='btn m-1 bg-transparent border-0 shadow-none p-0'
+          >
+            <img
+              src='/menu.svg'
+              alt=''
+              class='w-auto lg:h-[40px] h-[25px] mb-1 p-0 fill-white'
+            />
+          </div>
+          <ul
+            tabindex='0'
+            class='dropdown-content menu bg-base-100 rounded-lg z-[1] w-30 lg:w-52 font-400 p-1 shadow text-[12px] lg:text-[20px] text-gray-900'
+          >
+            <li><a class='hover:bg-[#2b2b2b] hover:text-white'>Inicio</a></li>
+            <li><a class='hover:bg-[#2b2b2b] hover:text-white'>Contacto</a></li>
+            <li><a class='hover:bg-[#2b2b2b] hover:text-white'>Nosotros</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </nav>
 
   <style>
