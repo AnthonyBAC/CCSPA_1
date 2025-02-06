@@ -1,23 +1,71 @@
 <header
-  class='grid grid-cols-1 lg:grid-cols-[1fr_25%] h-screen max-w-screen mx-auto'
+  class='flex flex-col lg:grid lg:grid-cols-[80%_20%] h-screen max-w-screen mx-auto justify-between'
 >
   <div
-    class='grid grid-row-2 grid-cols-1content-between px-5 lg:px-10 py-8 order-2 lg:order-1'
+    class='absolute translate-y-[-5vh] translate-x-[-2vw] z-[2] hidden 2xl:block'
   >
-    <a
-      href='#'
-      class='hidden lg:block justify-self-start'
+    <div
+      class='absolute translate-y-[20vh] z-[0] translate-x-[65vw] h-[500px] w-[500px] rounded-full bg-[url(../assets/1.jpg)] bg-[100%_auto] text-white text-2xl'
     >
-      <img
-        src='/logo.svg'
-        alt='Logo CentralClima SPA'
-        class='h-[50px]'
-      />
-    </a>
+      <div
+        class='bg-[#00000093] w-[500px] h-[500px] rounded-full hover:bg-[#00000000] transition'
+      >
+      </div>
+    </div>
 
-    <div class='text-center lg:text-left grid grid-row-2 gap-5'>
-      <div class='space-y-4 lg:mb-0 grid content-center'>
-        <h1 class='text-2xl lg:text-5xl font-bold text-gray-900 leading-tight'>
+    <div
+      class='absolute translate-y-[15vh] translate-x-[55vw] h-[350px] w-[350px] rounded-full bg-[url(../assets/2.jpg)] bg-[100%_auto] grid justify-center items-center text-white text-2xl'
+    >
+      <div
+        class='bg-[#00000093] w-[350px] h-[350px] rounded-full hover:bg-[#00000000] transition'
+      >
+      </div>
+    </div>
+    <div
+      class='absolute translate-y-[45vh] translate-x-[60vw] h-[250px] w-[250px] rounded-full bg-[url(../assets/4.jpg)] bg-[100%_auto] grid justify-center items-center text-white text-2xl z-[3]'
+    >
+      <div
+        class='bg-[#00000093] w-[250px] h-[250px] rounded-full hover:bg-[#00000000] transition'
+      >
+      </div>
+    </div>
+    <div
+      class='absolute translate-y-[58vh] translate-x-[55vw] h-[150px] w-[150px] rounded-full bg-[url(../assets/3.jpg)] bg-[100%_auto] grid justify-center items-center text-white text-2xl z-[3]'
+    >
+      <div
+        class='bg-[#00000093] w-[150px] h-[150px] rounded-full hover:bg-[#00000000] transition'
+      >
+      </div>
+    </div>
+    <div
+      class='absolute translate-y-[60vh] translate-x-[55vw] h-[350px] w-[350px] rounded-full bg-[url(../assets/5.jpg)] bg-[100%_auto] grid justify-center items-center text-white text-2xl z-[2]'
+    >
+      <div
+        class='bg-[#00000093] w-[350px] h-[350px] rounded-full hover:bg-[#00000000] transition'
+      >
+      </div>
+    </div>
+  </div>
+  <div
+    class='lg:grid lg:grid-row-2 lg:grid-cols-1content-between px-0 lg:p-12 py-0 order-2 lg:order-1 z-[1] flex flex-col justify-evenly lg:justify-normal h-screen lg:h-auto'
+  >
+    <div class='grid grid-row-2'>
+      <a
+        href='#'
+        class='hidden lg:block justify-self-start'
+      >
+        <img
+          src='/logo.svg'
+          alt='Logo CentralClima SPA'
+          class='lg:h-[50px] w-auto'
+        />
+      </a>
+      <div
+        class='space-y-4 lg:mb-0 grid content-center text-center lg:text-left m-5 lg:m-0'
+      >
+        <h1
+          class='text-2xl lg:text-5xl font-bold m-0 text-gray-900 leading-tight'
+        >
           Climatización perfecta para cada espacio,<br />
           confort para cada momento.
         </h1>
@@ -28,27 +76,28 @@
           Soluciones inteligentes para hogares y empresas.
         </p>
       </div>
-
+    </div>
+    <div class='text-center lg:text-left grid grid-row-2 gap-5'>
       <div
-        class='grid grid-cols-2 align-center lg:flex lg:justify-start lg:items-end lg:align-bottom gap-4 lg:mt-20 justify-center'
+        class='grid grid-cols-2 align-center lg:flex lg:justify-start lg:items-end lg:align-bottom gap-4 lg:mt-0 justify-center'
       >
         <button
-          class='px-4 py-2 text-sm lg:text-base rounded-full border border-gray-100 bg-white text-gray-800 shadow-md hover:bg-[#002244] hover:text-white transition-all'
+          class='px-4 py-2 text-sm lg:text-base rounded-full border border-gray-100 bg-white text-gray-800 shadow-lg hover:bg-[#002244] hover:text-white transition-all'
         >
           Fiabilidad
         </button>
         <button
-          class='px-4 py-2 text-sm lg:text-base rounded-full border border-gray-100 bg-white text-gray-800 shadow-md hover:bg-[#002244] hover:text-white transition-all'
+          class='px-4 py-2 text-sm lg:text-base rounded-full border border-gray-100 bg-white text-gray-800 shadow-lg hover:bg-[#002244] hover:text-white transition-all'
         >
           Compromiso
         </button>
         <button
-          class='px-4 py-2 text-sm lg:text-base rounded-full border border-gray-100 bg-white text-gray-800 shadow-md hover:bg-[#002244] hover:text-white transition-all'
+          class='px-4 py-2 text-sm lg:text-base rounded-full border border-gray-100 bg-white text-gray-800 shadow-lg hover:bg-[#002244] hover:text-white transition-all'
         >
           Calidad
         </button>
         <button
-          class='px-4 py-2 text-sm lg:text-base rounded-full border border-gray-100 bg-white text-gray-800 shadow-md hover:bg-[#002244] hover:text-white transition-all'
+          class='px-4 py-2 text-sm lg:text-base rounded-full border border-gray-100 bg-white text-gray-800 shadow-lg hover:bg-[#002244] hover:text-white transition-all'
           '
         >
           Experiencia
@@ -57,8 +106,9 @@
     </div>
   </div>
 
+  <!-- class='bg-gradient-to-r from-[#0054a8] to-[#013162] lg:bg-gradient-to-r order-1 lg:order-2 shadow-xl p-8 lg:p-12 grid content-start lg:justify-end' -->
   <nav
-    class='bg-gradient-to-b from-[#1b1a1b] to-[#2b2b2b] lg:bg-gradient-to-r order-1 lg:order-2 shadow-xl p-8 lg:p-12 grid content-start lg:justify-end'
+    class='bg-gradient-to-b from-[#1b1a1b] h-[100px] lg:h-auto to-[#2b2b2b] lg:bg-gradient-to-r order-1 lg:order-2 shadow-xl p-8 lg:p-12 grid content-start lg:justify-end z-[1]'
   >
     <div class='grid grid-cols-2 justify-end items-end'>
       <!-- Columna 1: Imagen -->
@@ -86,7 +136,7 @@
           </div>
           <ul
             tabindex='0'
-            class='dropdown-content menu bg-base-100 rounded-lg z-[1] w-30 lg:w-52 font-400 p-1 shadow text-[12px] lg:text-[20px] text-gray-900'
+            class='dropdown-content menu bg-base-100 rounded-lg w-30 lg:w-52 font-400 p-1 shadow text-[12px] lg:text-[20px] text-gray-900'
           >
             <li><a class='hover:bg-[#2b2b2b] hover:text-white'>Inicio</a></li>
             <li><a class='hover:bg-[#2b2b2b] hover:text-white'>Contacto</a></li>
@@ -96,18 +146,18 @@
       </div>
     </div>
   </nav>
-
-  <style>
-    button {
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    .text-gray-900 {
-      color: #2d2d2d;
-    }
-
-    nav {
-      box-shadow: -8px 0px 30px rgba(0, 0, 0, 0.15);
-    }
-  </style>
 </header>
+
+<style>
+  button {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .text-gray-900 {
+    color: #2d2d2d;
+  }
+
+  nav {
+    box-shadow: -10px 0px 50px 5px rgba(0, 0, 0, 0.3);
+  }
+</style>
