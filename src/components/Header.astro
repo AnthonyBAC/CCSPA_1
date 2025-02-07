@@ -1,151 +1,166 @@
 <header
-  class='flex flex-col lg:grid lg:grid-cols-[80%_20%] h-screen max-w-screen mx-auto justify-between'
+  class='flex flex-col lg:grid lg:grid-cols-[100%] max-h-screen h-full max-w-screen mx-auto justify-between mt-[100px] lg:mt-0'
 >
   <div
-    class='absolute translate-y-[-5vh] translate-x-[-2vw] z-[2] hidden 2xl:block'
+    class='lg:grid lg:grid-rows-[20%_60%_20%] lg:grid-cols-1 content-between px-0 py-0 order-2 lg:order-1 flex flex-col justify-start lg:justify-normal h-screen lg:h-auto'
   >
-    <div
-      class='absolute translate-y-[20vh] z-[0] translate-x-[65vw] h-[500px] w-[500px] rounded-full bg-[url(../assets/1.jpg)] bg-[100%_auto] text-white text-2xl'
-    >
-      <div
-        class='bg-[#00000093] w-[500px] h-[500px] rounded-full hover:bg-[#00000000] transition'
-      >
+    <div class='grid grid-cols-2 lg:px-8 lg:pt-8'>
+      <div>
+        <a
+          href='#'
+          class='hidden lg:block justify-self-start'
+        >
+          <img
+            src='/logo.svg'
+            alt='Logo CentralClima SPA'
+            class='lg:h-[50px] w-auto'
+          />
+        </a>
+      </div>
+      <!-- SOCIAL MEDIA -->
+      <div class='hidden lg:block'>
+        <ul class='place-items-start flex justify-end gap-4 mt-0 content-start'>
+          <li>
+            <a
+              href=''
+              class='text-sm lg:text-base font-light text-[18px] rounded-sm h-auto border-1 border-gray-100 bg-white text-gray-800 shadow-lg hover:bg-[#2b2b2b2a] transition-all py-2 px-3 flex flex-row gap-1 items-center'
+            >
+              <img
+                src='/whats-dark.svg'
+                alt=''
+                class='w-auto h-[20px] p-0'
+              />
+              Whatsapp</a
+            >
+          </li>
+          <li>
+            <a
+              href=''
+              class='text-sm lg:text-base font-light text-[18px] rounded-sm h-auto border-1 border-gray-100 bg-white text-gray-800 shadow-lg hover:bg-[#2b2b2b2a] transition-all py-2 px-3 flex flex-row gap-1 items-center'
+            >
+              <img
+                src='/face-dark.svg'
+                alt=''
+                class='w-auto h-[20px] p-0'
+              />
+              Facebook</a
+            >
+          </li>
+          <li>
+            <a
+              href=''
+              class='text-sm lg:text-base font-light text-[18px] rounded-sm h-auto border-1 border-gray-100 bg-white text-gray-800 shadow-lg hover:bg-[#2b2b2b2a] transition-all py-2 px-3 flex flex-row gap-1 items-center'
+            >
+              <img
+                src='/instagram-dark.svg'
+                alt=''
+                class='w-auto h-[20px] p-0'
+              />
+              Instagram</a
+            >
+          </li>
+        </ul>
       </div>
     </div>
+    <div
+      class='relative space-y-4 lg:grid grid-cols-[80%_20%] content-center text-center lg:content-normal items-center justify-center lg:justify-start lg:text-left lg:p-8 p-8 lg:py-0 lg:m-0 bg-[url(../assets/banner.jpg)] w-full bg-[100%_auto] bg-no-repeat bg-center flex flex-col lg:gap-0 z-[1] bg-[#00000093] bg-blend-overlay gap-5'
+    >
+      <!-- BG BLACK WITH OPACITY -->
 
-    <div
-      class='absolute translate-y-[15vh] translate-x-[55vw] h-[350px] w-[350px] rounded-full bg-[url(../assets/2.jpg)] bg-[100%_auto] grid justify-center items-center text-white text-2xl'
-    >
+      <!-- MAIN CONTENT -->
       <div
-        class='bg-[#00000093] w-[350px] h-[350px] rounded-full hover:bg-[#00000000] transition'
-      >
-      </div>
-    </div>
-    <div
-      class='absolute translate-y-[45vh] translate-x-[60vw] h-[250px] w-[250px] rounded-full bg-[url(../assets/4.jpg)] bg-[100%_auto] grid justify-center items-center text-white text-2xl z-[3]'
-    >
-      <div
-        class='bg-[#00000093] w-[250px] h-[250px] rounded-full hover:bg-[#00000000] transition'
-      >
-      </div>
-    </div>
-    <div
-      class='absolute translate-y-[58vh] translate-x-[55vw] h-[150px] w-[150px] rounded-full bg-[url(../assets/3.jpg)] bg-[100%_auto] grid justify-center items-center text-white text-2xl z-[3]'
-    >
-      <divevenly
-        class='bg-[#00000093] w-[150px] h-[150px] rounded-full hover:bg-[#00000000] transition'
-      >
-      </divevenly>
-    </div>
-    <div
-      class='absolute translate-y-[60vh] translate-x-[55vw] h-[350px] w-[350px] rounded-full bg-[url(../assets/5.jpg)] bg-[100%_auto] grid justify-center items-center text-white text-2xl z-[2]'
-    >
-      <div
-        class='bg-[#00000093] w-[350px] h-[350px] rounded-full hover:bg-[#00000000] transition'
-      >
-      </div>
-    </div>
-  </div>
-  <div
-    class='lg:grid lg:grid-row-2 lg:grid-cols-1content-between px-0 lg:p-12 py-0 order-2 lg:order-1 z-[1] flex flex-col justify-evenly lg:justify-normal h-screen lg:h-auto'
-  >
-    <div class='grid grid-row-2'>
-      <a
-        href='#'
-        class='hidden lg:block justify-self-start'
-      >
-        <img
-          src='/logo.svg'
-          alt='Logo CentralClima SPA'
-          class='lg:h-[50px] w-auto'
-        />
-      </a>
-      <div
-        class='space-y-4 lg:mb-0 grid content-center text-center lg:text-left m-5 lg:m-0'
+        class='relative z-20 h-full flex flex-col justify-center m-0 gap-5 lg:gap-0'
       >
         <h1
-          class='text-2xl lg:text-5xl font-bold m-0 text-gray-900 leading-tight'
+          class='text-2xl lg:text-5xl font-light m-0 text-white leading-tight'
         >
           Climatización perfecta para cada espacio,<br />
           confort para cada momento.
         </h1>
-        <p class='text-base lg:text-lg text-gray-600 font-medium'>
-          <span class='text-[#003162]'>Central</span><span
-            class='text-[#CD0000]'>Clima SPA</span
+        <p
+          class='text-base lg:text-lg text-white font-light flex flex-col lg:flex-row lg:text-left items-center'
+        >
+          <span
+            class='font-bold bg-white rounded-[5px] p-[2px] lg:mr-[5px] w-[150px] mx-auto lg:mx-0'
           >
-          Soluciones inteligentes para hogares y empresas.
+            <span class='text-[#003162]'>Central</span><span
+              class='text-[#CD0000]'>Clima SPA</span
+            >
+          </span>
+          Soluciones integrales para empresas y residencial.
         </p>
       </div>
-    </div>
-    <div class='text-center lg:text-left grid grid-row-2 gap-5 px-8 lg:p-0'>
+
+      <!-- AUTHOR INFO -->
       <div
-        class='grid grid-cols-2 align-center lg:flex lg:justify-start lg:items-end lg:align-bottom gap-4 lg:mt-0 justify-center'
+        class='flex lg:justify-end lg:items-end lg:py-8 opacity-25 z-20 h-full'
       >
-        <button
-          class='px-4 py-2 text-sm lg:text-base rounded-full border border-gray-100 bg-white text-gray-800 shadow-lg hover:bg-[#002244] hover:text-white transition-all'
+        <div
+          class='text-white text-xs gap-2 bg-black bg-opacity-50 px-2 py-1 rounded flex'
         >
-          Fiabilidad
-        </button>
-        <button
-          class='px-4 py-2 text-sm lg:text-base rounded-full border border-gray-100 bg-white text-gray-800 shadow-lg hover:bg-[#002244] hover:text-white transition-all'
-        >
-          Compromiso
-        </button>
-        <button
-          class='px-4 py-2 text-sm lg:text-base rounded-full border border-gray-100 bg-white text-gray-800 shadow-lg hover:bg-[#002244] hover:text-white transition-all'
-        >
-          Calidad
-        </button>
-        <button
-          class='px-4 py-2 text-sm lg:text-base rounded-full border border-gray-100 bg-white text-gray-800 shadow-lg hover:bg-[#002244] hover:text-white transition-all'
-          '
-        >
-          Experiencia
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <!-- class='bg-gradient-to-r from-[#0054a8] to-[#013162] lg:bg-gradient-to-r order-1 lg:order-2 shadow-xl p-8 lg:p-12 grid content-start lg:justify-end' -->
-  <nav
-    class='bg-gradient-to-b from-[#1b1a1b] h-[100px] lg:h-auto to-[#2b2b2b] lg:bg-gradient-to-r order-1 lg:order-2 shadow-xl p-8 lg:p-12 grid content-start lg:justify-end z-[1]'
-  >
-    <div class='grid grid-cols-2 justify-end items-end'>
-      <!-- Columna 1: Imagen -->
-      <div class='flex justify-start items-end'>
-        <img
-          src='/logo.svg'
-          alt='Logo CentralClima SPA'
-          class='h-[50px] w-auto lg:hidden'
-        />
-      </div>
-
-      <!-- Columna 2: Menu -->
-      <div class='flex justify-end items-end'>
-        <div class='dropdown dropdown-end'>
-          <div
-            tabindex='0'
-            role='button'
-            class='btn m-1 bg-transparent border-0 shadow-none p-0'
-          >
-            <img
-              src='/menu.svg'
-              alt=''
-              class='w-auto lg:h-[40px] h-[25px] mb-1 p-0 fill-white'
-            />
-          </div>
-          <ul
-            tabindex='0'
-            class='dropdown-content menu bg-base-100 rounded-lg w-30 lg:w-52 font-400 p-1 shadow text-[12px] lg:text-[20px] text-gray-900'
-          >
-            <li><a class='hover:bg-[#2b2b2b] hover:text-white'>Inicio</a></li>
-            <li><a class='hover:bg-[#2b2b2b] hover:text-white'>Contacto</a></li>
-            <li><a class='hover:bg-[#2b2b2b] hover:text-white'>Nosotros</a></li>
-          </ul>
+          <a
+            href='https://unsplash.com/fotografo'
+            target='_blank'
+            class='underline'
+            >Photo by<a
+              href='https://unsplash.com/@x_vinicius?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash'
+              >Vinícius Henrique Photography</a
+            > on <a
+              href='https://unsplash.com/photos/landscape-photo-of-mountain-tlCzxI2RQAc?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash'
+              >Unsplash</a
+            >
+          </a>
         </div>
       </div>
     </div>
-  </nav>
+
+    <div
+      class='text-center grid grid-rows-[30%_70%] lg:grid-rows-1 h-full justify-center px-8 content-center lg:content-normal'
+    >
+      <div class='flex justify-center items-center lg:hidden'>
+        <h2 class='text-3xl lg:text-3xl font-light'>
+          ¿Nos quieres conocer más?
+        </h2>
+      </div>
+      <!-- BUTTONS -->
+      <ul
+        class='grid grid-cols-2 place-items-center lg:flex lg:justify-start lg:items-end lg:align-bottom gap-15 lg:gap-4 lg:mt-0 lg:pb-8 content-start'
+      >
+        <li>
+          <a
+            href=''
+            class='text-sm lg:text-base font-light text-[18px] w-[120px] rounded-sm h-auto border-1 border-gray-100 bg-white text-gray-800 shadow-lg hover:bg-[#2b2b2b2a] transition-all py-4 px-5 flex flex-row gap-1 items-center justify-center'
+          >
+            Trabajos</a
+          >
+        </li>
+        <li>
+          <a
+            href=''
+            class='text-sm lg:text-base font-light text-[18px] w-[120px] rounded-sm h-auto border-1 border-gray-100 bg-white text-gray-800 shadow-lg hover:bg-[#2b2b2b2a] transition-all py-4 px-5 flex flex-row gap-1 items-center justify-center'
+          >
+            Servicios</a
+          >
+        </li>
+        <li>
+          <a
+            href=''
+            class='text-sm lg:text-base font-light text-[18px] w-[120px] rounded-sm h-auto border-1 border-gray-100 bg-white text-gray-800 shadow-lg hover:bg-[#2b2b2b2a] transition-all py-4 px-5 flex flex-row gap-1 items-center justify-center'
+          >
+            Nosotros</a
+          >
+        </li>
+        <li>
+          <a
+            href=''
+            class='text-sm lg:text-base font-light text-[18px] w-[120px] rounded-sm h-auto border-1 border-gray-100 bg-white text-gray-800 shadow-lg hover:bg-[#2b2b2b2a] transition-all py-4 px-5 flex flex-row gap-1 items-center justify-center'
+          >
+            Experiencia</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
 </header>
 
 <style>
