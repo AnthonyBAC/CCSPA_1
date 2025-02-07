@@ -1,10 +1,9 @@
 ---
-import AboutUs from '../components/AboutUs.astro'
-import Layout from '../layouts/Layout.astro'
-import WorkPlace from '../components/WorkPlace.astro'
-import Contact from '../components/Contact.astro'
-import GallerySLide from '../components/GallerySlide.astro'
-import Navigation from '../components/Navigation.astro'
+import AboutUs from '@components/AboutUs.astro'
+import Layout from '@layouts/Layout.astro'
+import WorkPlace from '@components/WorkPlace.astro'
+import Contact from '@components/Contact.astro'
+import Services from '@components/Services.astro'
 import '../styles/global.css'
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
@@ -12,8 +11,8 @@ import '../styles/global.css'
 ---
 
 <Layout>
-  <GallerySLide />
-  <AboutUs />
+  <Services />
   <WorkPlace />
+  <AboutUs />
   <Contact />
 </Layout>
