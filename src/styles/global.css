@@ -3,6 +3,41 @@
 
 
 
-* {
+* {}
+
+select {
+    color: #00000080;
+    font-weight: 400;
+    display: flex;
+    justify-content: start;
+    background-color: #d3d3d3;
+
+}
+
+option:not(first-child) {
+    color: #00000080;
+    font-weight: bold;
+    display: flex;
+    justify-content: start;
+}
+
+
+
+p,
+a,
+label,
+input,
+option,
+select,
+text-area {
     font-family: 'Roboto', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Montserrat', sans-serif;
 }

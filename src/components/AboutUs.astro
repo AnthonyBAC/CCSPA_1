@@ -1,19 +1,27 @@
-<section class='lg:h-screen h-screen 2xl:p-20 bg-white'>
+---
+import { Image } from 'astro:assets'
+---
+
+<section
+  class='h-full 2xl:h-screen bg-[#f2f2f2] lg:p-25 2xl:px-25 lg:px-10 px-8'
+>
   <div class='h-full max-w-[1540px] mx-auto'>
     <div class='w-full flex flex-col h-full boder-black'>
-      <div class='flex lg:flex-row flex-col w-full justify-end p-5 lg:p-0'>
+      <div class='flex lg:flex-row flex-col w-full justify-end lg:p-0'>
         <div class='w-full flex lg:items-start'>
           <div
-            class='bg-[#003162] lg:h-full w-[50%] size-[100px] lg:size-[300px] rounded-br-[100%] max-h-[250px]'
+            class='bg-[#003162] size-[100px] lg:size-[250px] rounded-br-[100%] max-h-[250px]'
           >
           </div>
         </div>
-        <h1 class='text-right text-9xl text-gray-900 font-bold'>
+        <h1
+          class='text-right 2xl:text-8xl lg:text-5xl text-4xl text-gray-900 font-bold'
+        >
           About <br />US
         </h1>
       </div>
       <div
-        class='flex flex-col h-full items-start lg:items-center flex-grow py-5 lg:py-2 px-5 lg:px-0 gap-5 lg:gap-5 text-gray-900'
+        class='flex flex-col h-full items-start lg:items-center flex-grow py-5 lg:py-2 lg:px-0 gap-5 lg:gap-5 text-gray-900'
       >
         <h2 class='text-3xl hidden lg:block font-bold'>
           Nuestra meta como empresa
@@ -21,42 +29,53 @@
         <h2 class='text-3xl lg:hidden font-bold'>
           Nuestra meta <br /> como empresa
         </h2>
-        <p class='text-2xl font-thin lg:w-[50%] lg:text-center text-right'>
+        <p class='text-1xl font-thin lg:w-[50%] lg:text-center text-right'>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus,
           ad quasi! Eveniet dolore saepe iure at asperiores rerum ad obcaecati.
-          Voluptate, quasi possimus at sed assumenda a cum sunt fugiat? Lorem
-          ipsum, dolor sit amet consectetur adipisicing elit. Ipsum dolore,
-          excepturi, totam consequatur ad laborum porro, nisi nobis debitis
-          minima asperiores? Animi atque magni aperiam. Deserunt officia
-          voluptatum alias iste?
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
+          magnam dolorem sequi nostrum, dolor quos molestiae repudiandae. Quis
+          cumque aspernatur nostrum enim est, sit, itaque accusamus vero maiores
+          blanditiis quos?
         </p>
+        <div class='w-full flex justify-center'>
+          <Image
+            src='/logo.svg'
+            alt='ccu logo'
+            width={300}
+            height={300}
+          />
+        </div>
       </div>
       <div
-        class='w-full h-full flex justify-end lg:items-end px-5 lg:px-0 flex-col lg:flex-row'
+        class='w-full h-full flex justify-end items-end lg:px-0 lg:flex-row flex-col'
       >
         <div
-          class='w-full h-full flex justify-start items-end mb-5 lg:mb-0 text-gray-900'
+          class='w-full h-full flex lg:justify-start items-end lg:mb-0 mb-10 text-gray-900'
         >
           <div
-            class='border-gray-600 w-[600px] h-[150px] rounded-xl bg-white shadow-2xl grid grid-cols-3 p-5'
+            class='border-gray-600 w-[600px] h-[150px] rounded-xl bg-white shadow-2xl grid grid-cols-3 py-5'
           >
-            <div class='grid justify-center'>
+            <div class='grid justify-center items-center'>
               <h3 class='text-center'>Años <br /> experiencia</h3>
-              <p class='text-center'>20</p>
+              <p class='text-center font-bold'>14</p>
             </div>
 
-            <div class='grid justify-center border-x-1 border-[#00000030]'>
-              <h3>1</h3>
+            <div
+              class='grid justify-center items-center border-x-1 border-[#00000030]'
+            >
+              <h3 class='text-center'>Clientes <br /> satisfechos</h3>
+              <p class='text-center font-bold'>125</p>
             </div>
 
-            <div class='grid justify-center'>
-              <h3>1</h3>
+            <div class='grid justify-center items-center'>
+              <h3 class='text-center'>Empresas <br /></h3>
+              <p class='text-center font-bold'>10</p>
             </div>
           </div>
         </div>
-        <div class='h-full w-full lg:p-0 flex justify-end items-end'>
+        <div class='h-full w-full flex justify-end'>
           <div
-            class='bg-[#cd0000] lg:h-full w-[50%] size-[100px] lg:size-[300px] rounded-tl-[100%] max-h-[250px]'
+            class='bg-[#cd0000] size-[100px] lg:size-[250px] rounded-tl-[100%] max-h-[250px]'
           >
           </div>
         </div>

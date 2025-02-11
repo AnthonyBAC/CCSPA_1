@@ -1,7 +1,12 @@
-<div class='w-full flex flex-grow items-start justify-center p-5 bg-white'>
-  <h1 class='text-3xl font-bold text-gray-900'>Principales marcas</h1>
-</div>
+---
+import { Image } from 'astro:assets'
+---
 
+<!-- <div
+  class='w-full flex flex-grow items-start justify-center pb-5 bg-white text-gray-900'
+>
+  <h1 class='text-3xl font-bold text-gray-900'>Principales marcas</h1>
+</div> -->
 <section
   class='w-full flex bg-[#003162] h-full justify-center items-center p-5'
 >
@@ -13,29 +18,32 @@
         href='https://www.mideastore.cl/?srsltid=AfmBOornSrz1m0n2EnzzHuGlc1MNyKngqUEHlZ4TPd5GmGtu9Ft4Ae0s'
         class='p-2'
       >
-        <img
+        <Image
           src='/midea-logo.svg'
-          alt=''
-          class='h-auto w-[200px] text-black'
-        /></a
-      >
-      <a
-        href='https://www.hisense.cl/'
-        class='p-2'
-      >
-        <img
-          src='/hisense.svg'
-          alt=''
-          class='h-auto w-[200px]'
-        /></a
-      >
-
-      <a href='https://daikinlatam.com/es/contacto/'>
-        <img
-          src='/daikin.svg'
-          alt=''
-          class='h-auto w-[200px]'
+          alt='midea logo'
+          width={200}
+          height={200}
         />
+        <a
+          href='https://www.hisense.cl/'
+          class='p-2'
+        >
+          <Image
+            src='/hisense.svg'
+            alt='hisense logo'
+            width={200}
+            height={200}
+          /></a
+        >
+
+        <a href='https://daikinlatam.com/es/contacto/'>
+          <Image
+            src='/daikin.svg'
+            alt='daikin logo'
+            width={200}
+            height={200}
+          />
+        </a>
       </a>
     </div>
   </div>
