@@ -6,8 +6,9 @@ import { Image } from 'astro:assets'
   <div
     class='h-screen p-8 lg:p-0 content-between order-2 lg:order-1 flex flex-col justify-start lg:justify-normal'
   >
+    <!-- PRIMER BLOQUE / BANNER -->
     <div
-      class='px-2 py-5 text-center items-center justify-center lg:justify-normal lg:text-left lg:grid lg:p-8 2xl:mb-0 lg:rounded-none rounded-2xl bg-[url(../assets/help-stay-WCmeYmM3jW4-unsplash.jpg)] max-w-screen 2xl:bg-[100%_auto] bg-no-repeat bg-cover flex lg:gap-0 z-[1] bg-[hsla(0,0%,0%,.60)] bg-blend-overlay gap-5 h-full'
+      class='px-2 py-5 text-center items-center justify-center lg:justify-normal lg:text-left lg:grid lg:p-8 2xl:mb-0 lg:rounded-none rounded-2xl bg-[url(../assets/banner1.svg)] max-w-screen 2xl:bg-[100%_auto] bg-no-repeat bg-cover flex lg:gap-0 z-[1] bg-[hsla(0,0%,0%,.25)] bg-blend-overlay gap-5 h-full'
     >
       <div class='lg:flex lg:flex-row justify-start h-full items-start hidden'>
         <div
@@ -21,27 +22,26 @@ import { Image } from 'astro:assets'
               <img
                 src='/logo.svg'
                 alt='Logo CentralClima SPA'
-                class='h-auto w-[150px]'
+                class='h-auto w-[200px]'
               />
             </a>
           </div>
           <!-- SOCIAL MEDIA -->
           <div class='hidden lg:flex lg:flex-grow basis-0 justify-end'>
             <ul
-              class='place-items-start flex justify-end gap-4 mt-0 text-[#dcdcdc] font-bold text-sm'
+              class='place-items-start flex justify-end gap-4 mt-0 text-[#dcdcdc] font-light text-sm'
             >
               <li>
                 <a
                   href=''
-                  class='rounded-sm h-auto bg-[#25D366] shadow-lg hover:bg-[#1CA04D] transition-all py-2 px-3 flex flex-row gap-1 items-center'
+                  class='rounded-sm h-auto bg-[#1CA04D] shadow-lg hover:bg-[#148A3B] transition-all py-2 px-3 flex flex-row gap-1 items-center'
                 >
                   <img
                     src='/whats-dark.svg'
                     alt=''
                     class='w-auto h-[20px] p-0'
                   />
-                  Whatsapp</a
-                >
+                </a>
               </li>
               <li>
                 <a
@@ -53,8 +53,7 @@ import { Image } from 'astro:assets'
                     alt=''
                     class='w-auto h-[20px] p-0'
                   />
-                  Facebook</a
-                >
+                </a>
               </li>
               <li>
                 <a
@@ -66,8 +65,7 @@ import { Image } from 'astro:assets'
                     alt=''
                     class='w-auto h-[20px] p-0'
                   />
-                  Instagram</a
-                >
+                </a>
               </li>
             </ul>
           </div>
@@ -77,12 +75,14 @@ import { Image } from 'astro:assets'
 
       <!-- MAIN CONTENT -->
       <div
-        class='z-20 flex flex-col flex-grow justify-center lg:grid-cols-[70%_30%] lg:grid m-0 gap-5 lg:gap-0'
+        class='z-20 flex flex-col flex-grow justify-center lg:grid m-0 gap-5 lg:gap-0'
       >
-        <div class='flex flex-col justify-end gap-2 text-[#dcdcdc]'>
-          <h1 class='text-2xl lg:text-5xl m-0 font-bold'>
-            Climatización perfecta para cada espacio, bienestar para cada
-            momento
+        <div
+          class='flex flex-col max-w-[1280px] justify-center items-center gap-2 text-[#dcdcdc] bg-[#00000050] p-5'
+        >
+          <h1 class='text-2xl lg:text-5xl text-center m-0 font-bold uppercase'>
+            Climatización <span class='text-[#003162]'>perfecta</span> para cada
+            <span class='text-[#cd0000]'>espacio</span>
           </h1>
           <div
             class='text-base lg:text-lg font-light flex flex-col lg:flex-row lg:text-left items-center'
@@ -92,33 +92,12 @@ import { Image } from 'astro:assets'
             </h2>
           </div>
         </div>
-        <!-- PHOTO CREDITS mobile -->
-        <div
-          class='flex lg:justify-end w-full justify-center lg:items-end opacity-40 z-20 h-full'
-        >
-          <div
-            class='text-white text-xs gap-2 bg-black bg-opacity-50 px-2 py-1 rounded flex'
-          >
-            <a
-              href='https://unsplash.com/helpstay'
-              target='_blank'
-              class='underline'
-              >Photo by<a
-                href='https://unsplash.com/@helpstay?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash'
-                >Help Stay</a
-              > on <a
-                href='https://unsplash.com/photos/landscape-photography-of-building-WCmeYmM3jW4?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash'
-                >Unsplash</a
-              >
-            </a>
-          </div>
-        </div>
       </div>
 
       <!-- CONOCERNOS LG -->
 
       <div
-        class='text-center grid-rows-[30%_70%] lg:grid-rows-1 lg:grid-cols-2 h-full w-full justify-center content-center hidden lg:grid'
+        class='text-center h-full w-full justify-center content-start hidden lg:grid'
       >
         <div class='flex justify-center items-center lg:hidden'>
           <h2 class='text-3xl lg:text-3xl font-light'>
@@ -128,12 +107,12 @@ import { Image } from 'astro:assets'
         <!-- BUTTONS -->
         <div class='w-full h-full flex'>
           <ul
-            class='grid grid-cols-2 lg:flex text-thin lg:justify-start lg:items-end lg:align-bottom gap-15 lg:gap-4 lg:mt-0 content-start font-lighter tracking-wide'
+            class='lg:flex font-bold lg:justify-center lgitems-center lg:align-bottom gap-15 lg:gap-4 lg:mt-0 content-start font-lighter tracking-wide'
           >
             <li>
               <a
                 href=''
-                class='w-[170px] max-w-[170px] flex rounded-sm bg-[#ffffff] text-gray-900 shadow-lg hover:bg-[#dcdcdc] hover:text-white transition-all p-2 items-center justify-center'
+                class='w-[120px] max-w-[170px] flex rounded-sm bg-[#003162] text-[#dcdcdc] shadow-lg hover:bg-[#00214D] transition-all p-2 items-center justify-center'
               >
                 Trabajos</a
               >
@@ -141,7 +120,7 @@ import { Image } from 'astro:assets'
             <li>
               <a
                 href=''
-                class='w-[170px] max-w-[170px] flex rounded-sm bg-[#ffffff] text-gray-900 shadow-lg hover:bg-[#dcdcdc] hover:text-white transition-all p-2 items-center justify-center'
+                class='w-[120px] max-w-[170px] flex rounded-sm bg-[#003162] text-[#dcdcdc] shadow-lg hover:bg-[#00214D] transition-all p-2 items-center justify-center'
               >
                 Servicios</a
               >
@@ -149,17 +128,9 @@ import { Image } from 'astro:assets'
             <li>
               <a
                 href=''
-                class='w-[170px] max-w-[170px] flex rounded-sm bg-[#ffffff] text-gray-900 shadow-lg hover:bg-[#dcdcdc] hover:text-white transition-all p-2 items-center justify-center'
+                class='w-[120px] max-w-[170px] flex rounded-sm bg-[#003162] text-[#dcdcdc] shadow-lg hover:bg-[#00214D] transition-all p-2 items-center justify-center'
               >
                 Nosotros</a
-              >
-            </li>
-            <li>
-              <a
-                href=''
-                class='w-[170px] max-w-[170px] flex rounded-sm bg-[#ffffff] text-gray-900 shadow-lg hover:bg-[#dcdcdc] hover:text-white transition-all py-2 items-center justify-center'
-              >
-                Experiencia</a
               >
             </li>
           </ul>

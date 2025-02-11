@@ -7,50 +7,43 @@ import { Image } from 'astro:assets'
 >
   <div class='h-full max-w-[1540px] mx-auto'>
     <div class='w-full flex flex-col h-full boder-black'>
+      <!-- PRIMER BLOQUE / about us -->
       <div class='flex lg:flex-row flex-col w-full justify-end lg:p-0'>
-        <div class='w-full flex lg:items-start'>
-          <div
-            class='bg-[#003162] size-[100px] lg:size-[250px] rounded-br-[100%] max-h-[250px]'
-          >
-          </div>
-        </div>
         <h1
           class='text-right 2xl:text-8xl lg:text-5xl text-4xl text-gray-900 font-bold'
         >
           About <br />US
         </h1>
       </div>
+      <!-- SEGUNDO BLOQUE / meta -->
       <div
-        class='flex flex-col h-full items-start lg:items-center flex-grow py-5 lg:py-2 lg:px-0 gap-5 lg:gap-5 text-gray-900'
+        class='flex flex-col lg:flex-row h-full w-full items-start py-5 lg:py-2 lg:px-0 gap-5 lg:gap-0 text-gray-900'
       >
-        <h2 class='text-3xl hidden lg:block font-bold'>
-          Nuestra meta como empresa
-        </h2>
-        <h2 class='text-3xl lg:hidden font-bold'>
-          Nuestra meta <br /> como empresa
-        </h2>
-        <p class='text-1xl font-thin lg:w-[50%] lg:text-center text-right'>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus,
-          ad quasi! Eveniet dolore saepe iure at asperiores rerum ad obcaecati.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
-          magnam dolorem sequi nostrum, dolor quos molestiae repudiandae. Quis
-          cumque aspernatur nostrum enim est, sit, itaque accusamus vero maiores
-          blanditiis quos?
-        </p>
-        <div class='w-full flex justify-center'>
-          <Image
-            src='/logo.svg'
-            alt='ccu logo'
-            width={300}
-            height={300}
-          />
+        <div class='flex flex-col items-center gap-5 w-full'>
+          <h2 class='text-3xl hidden lg:block font-bold text-center uppercase'>
+            Nuestra mision
+          </h2>
+          <h2 class='text-3xl lg:hidden font-bold'>
+            Nuestra meta <br /> como empresa
+          </h2>
+          <p class='text-2xl font-thin lg:text-center text-right'>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Repellendus, ad quasi! Eveniet dolore saepe iure at asperiores rerum
+            ad obcaecati. Lorem ipsum dolor sit amet consectetur adipisicing
+            elit. Obcaecati magnam dolorem sequi nostrum, dolor quos molestiae
+          </p>
+          <div class='w-full flex justify-center'>
+            <Image
+              src='/logo.svg'
+              alt='ccu logo'
+              width={200}
+              height={200}
+            />
+          </div>
         </div>
-      </div>
-      <div
-        class='w-full h-full flex justify-end items-end lg:px-0 lg:flex-row flex-col'
-      >
+        <!-- TERCER BLOQUE / stats -->
         <div
-          class='w-full h-full flex lg:justify-start items-end lg:mb-0 mb-10 text-gray-900'
+          class='w-full h-full flex items-center justify-center lg:mb-0 mb-10 text-gray-900'
         >
           <div
             class='border-gray-600 w-[600px] h-[150px] rounded-xl bg-white shadow-2xl grid grid-cols-3 py-5'
@@ -73,11 +66,11 @@ import { Image } from 'astro:assets'
             </div>
           </div>
         </div>
-        <div class='h-full w-full flex justify-end'>
-          <div
-            class='bg-[#cd0000] size-[100px] lg:size-[250px] rounded-tl-[100%] max-h-[250px]'
-          >
-          </div>
+      </div>
+      <div class='h-full w-full flex justify-start'>
+        <div
+          class='bg-[#cd0000] size-[100px] lg:size-[250px] rounded-tr-[100%] max-h-[250pxv ]'
+        >
         </div>
       </div>
     </div>
