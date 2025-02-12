@@ -1,5 +1,6 @@
 ---
 import { Image } from 'astro:assets'
+import { fade } from 'astro:transitions'
 ---
 
 <header
@@ -10,7 +11,7 @@ import { Image } from 'astro:assets'
   >
     <!-- PRIMER BLOQUE / BANNER -->
     <div
-      class='px-2 py-5 text-center items-center justify-center lg:justify-normal lg:text-left lg:grid lg:p-8 2xl:mb-0 lg:rounded-none rounded-2xl bg-[url(/banner.png)] max-w-screen 2xl:bg-[100%_auto] bg-no-repeat bg-cover flex lg:gap-0 z-[1] bg-[hsla(0,0%,0%,.25)] bg-blend-overlay gap-5 h-full'
+      class='px-2 py-5 text-center items-center justify-center lg:justify-normal lg:text-left lg:grid lg:p-8 2xl:mb-0 lg:rounded-none rounded-2xl bg-[url(/banner.webp)] max-w-screen 2xl:bg-[100%_auto] bg-no-repeat bg-cover flex lg:gap-0 z-[1] bg-[hsla(0,0%,0%,.25)] bg-blend-overlay gap-5 h-full'
     >
       <div class='lg:flex lg:flex-row justify-start h-full items-start hidden'>
         <div
@@ -24,7 +25,7 @@ import { Image } from 'astro:assets'
               <img
                 src='/logo.svg'
                 alt='Logo CentralClima SPA'
-                class='h-auto w-[200px]'
+                width='200'
               />
             </a>
           </div>
@@ -35,37 +36,43 @@ import { Image } from 'astro:assets'
             >
               <li>
                 <a
-                  href=''
+                  href='#'
                   class='rounded-sm h-auto bg-[#1CA04D] shadow-lg hover:bg-[#148A3B] transition-all py-2 px-3 flex flex-row gap-1 items-center'
                 >
                   <img
                     src='/whats-dark.svg'
                     alt=''
-                    class='w-auto h-[20px] p-0'
+                    class='p-0'
+                    width='20'
+                    height='20'
                   />
                 </a>
               </li>
               <li>
                 <a
-                  href=''
+                  href='https://www.facebook.com/CentralClimaSpA'
                   class='rounded-sm h-auto bg-[#1877F2] shadow-lg hover:bg-[#1566C1] transition-all py-2 px-3 flex flex-row gap-1 items-center'
                 >
                   <img
                     src='/face-dark.svg'
                     alt=''
-                    class='w-auto h-[20px] p-0'
+                    class='p-0'
+                    width='20'
+                    height='20'
                   />
                 </a>
               </li>
               <li>
                 <a
-                  href=''
+                  href='https://www.instagram.com/centralclimaspa/'
                   class='rounded-sm h-auto bg-[#E4405F] shadow-lg hover:bg-[#C2364E] transition-all py-2 px-3 flex flex-row gap-1 items-center'
                 >
                   <img
                     src='/instagram-dark.svg'
                     alt=''
-                    class='w-auto h-[20px] p-0'
+                    class='p-0'
+                    width='20'
+                    height='20'
                   />
                 </a>
               </li>
@@ -80,7 +87,7 @@ import { Image } from 'astro:assets'
         class='z-20 flex flex-col flex-grow justify-center lg:grid m-0 gap-5 lg:gap-0'
       >
         <div
-          class='flex flex-col max-w-[1320px] justify-center items-center gap-2 text-[#dcdcdc] lg:bg-[#00316280] p-5'
+          class='flex flex-col max-w-[1320px] justify-center items-center gap-2 text-[#dcdcdc] lg:bg-[#00316280] p-5 animate-fade-in'
         >
           <h1
             class='text-2xl lg:text-5xl text-center m-0 font-extrabold uppercase'
@@ -114,7 +121,7 @@ import { Image } from 'astro:assets'
           >
             <li>
               <a
-                href=''
+                href='#'
                 class='w-[120px] max-w-[170px] flex rounded-full bg-[#00316280] text-[#dcdcdc] shadow-lg hover:bg-[#00214D] transition-all p-2 items-center justify-center'
               >
                 Trabajos</a
@@ -122,7 +129,7 @@ import { Image } from 'astro:assets'
             </li>
             <li>
               <a
-                href=''
+                href='#Services'
                 class='w-[120px] max-w-[170px] flex rounded-full bg-[#00316280] text-[#dcdcdc] shadow-lg hover:bg-[#00214D] transition-all p-2 items-center justify-center'
               >
                 Servicios</a
@@ -130,34 +137,13 @@ import { Image } from 'astro:assets'
             </li>
             <li>
               <a
-                href=''
+                href='#AboutUs'
                 class='w-[120px] max-w-[170px] flex rounded-full bg-[#00316280] text-[#dcdcdc] shadow-lg hover:bg-[#00214D] transition-all p-2 items-center justify-center'
               >
                 Nosotros</a
               >
             </li>
           </ul>
-        </div>
-        <!-- PHOTO CREDITS -->
-        <div
-          class='flex flex-grow lg:hidden lg:justify-end w-full justify-center lg:items-end opacity-25 z-20 lg:pb-8'
-        >
-          <div
-            class='text-white text-xs gap-2 bg-black bg-opacity-50 px-2 py-1 rounded flex'
-          >
-            <a
-              href='https://unsplash.com/fotografo'
-              target='_blank'
-              class='underline'
-              >Photo by<a
-                href='https://unsplash.com/@x_vinicius?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash'
-                >Vinícius Henrique Photography</a
-              > on <a
-                href='https://unsplash.com/photos/landscape-photo-of-mountain-tlCzxI2RQAc?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash'
-                >Unsplash</a
-              >
-            </a>
-          </div>
         </div>
       </div>
     </div>

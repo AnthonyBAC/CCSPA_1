@@ -30,7 +30,7 @@ import Image from 'astro:assets'
                 type='text'
                 name='name'
                 placeholder='Nombre'
-                class='border-0 bg-[#d3d3d3] border-b-2 rounded-lg border-[#00000030] px-2 py-1 text-gray-900 focus:outline-[#00000030] focus:outline-1 placeholder:text-[#00000080] placeholder:font-light lg:w-[200px] w-full'
+                class='border-0 bg-[#fff] border-b-2 rounded-lg border-[#00000030] px-2 py-1 text-gray-900 focus:outline-[#00000030] focus:outline-1 placeholder:text-[#00000080] placeholder:font-light lg:w-[200px] w-full'
               />
             </div>
             <div class='flex'>
@@ -38,7 +38,7 @@ import Image from 'astro:assets'
                 type='text'
                 name='lastName'
                 placeholder='Apellido'
-                class='border-0 bg-[#d3d3d3] border-b-2 rounded-lg border-[#00000030] px-2 py-1 text-gray-900 focus:outline-[#00000030] focus:outline-1 placeholder:text-[#00000080] placeholder:font-light lg:w-[200px] w-full'
+                class='border-0 bg-[#fff] border-b-2 rounded-lg border-[#00000030] px-2 py-1 text-gray-900 focus:outline-[#00000030] focus:outline-1 placeholder:text-[#00000080] placeholder:font-light lg:w-[200px] w-full'
               />
             </div>
           </div>
@@ -50,7 +50,7 @@ import Image from 'astro:assets'
                 type='number'
                 name='phone'
                 placeholder='Telefono'
-                class='border-0 bg-[#d3d3d3] border-b-2 rounded-lg border-[#00000030] px-2 py-1 text-gray-900 focus:outline-[#00000030] focus:outline-1 placeholder:text-[#00000080] placeholder:font-light lg:w-[200px] w-full'
+                class='border-0 bg-[#fff] border-b-2 rounded-lg border-[#00000030] px-2 py-1 text-gray-900 focus:outline-[#00000030] focus:outline-1 placeholder:text-[#00000080] placeholder:font-light lg:w-[200px] w-full'
               />
             </div>
           </div>
@@ -62,7 +62,7 @@ import Image from 'astro:assets'
                 type='email'
                 name='email'
                 placeholder='Email'
-                class='border-0 bg-[#d3d3d3] border-b-2 rounded-lg border-[#00000030] px-2 py-1 text-gray-900 focus:outline-[#00000030] focus:outline-1 placeholder:text-[#00000080] placeholder:font-light lg:w-[200px] w-full'
+                class='border-0 bg-[#fff] border-b-2 rounded-lg border-[#00000030] px-2 py-1 text-gray-900 focus:outline-[#00000030] focus:outline-1 placeholder:text-[#00000080] placeholder:font-light lg:w-[200px] w-full'
               />
             </div>
           </div>
@@ -71,17 +71,30 @@ import Image from 'astro:assets'
           <div class='flex items-center'>
             <select
               id='select'
-              class='flex g:w-[50%] lg:w-[200px] w-full items-center border-b-2 border-0 rounded-lg border-[#00000030] px-2 py-1 focus:outline-[#00000030] focus:outline-1'
+              class='flex g:w-[50%] lg:w-[200px] w-full items-center border-b-2 border-0 rounded-lg border-[#00000030] px-2 py-1 focus:outline-[#00000030] focus:outline-1 bg-[#fff'
             >
               <option
+                hidden
                 value='null'
                 selected
                 disabled
                 >Tipo de espacio</option
               >
-              <option value='casa'>Casa</option>
-              <option value='departamento'>Departamento</option>
-              <option value=''>Departamento</option>
+              <option
+                class='text-black'
+                value='casa'
+                >Casa</option
+              >
+              <option
+                class='text-black'
+                value='departamento'
+                >Departamento</option
+              >
+              <option
+                class='text-black'
+                value='depa'
+                >Departamento</option
+              >
             </select>
           </div>
           <div class='w-full h-[100px] flex'>
@@ -90,7 +103,7 @@ import Image from 'astro:assets'
               placeholder='Mensaje'
               id='message'
               name='message'
-              class='border-0 w-full h-full bg-[#d3d3d3] border-b-2 rounded-lg border-[#00000030] px-2 py-1 text-gray-900 focus:outline-[#00000030] focus:outline-1'
+              class='border-0 w-full h-full bg-[#ffffff] border-b-2 rounded-lg border-[#00000030] px-2 py-1 text-gray-900 focus:outline-[#00000030] focus:outline-1'
             ></textarea>
           </div>
           <div class='w-full flex justify-end'>
@@ -105,23 +118,10 @@ import Image from 'astro:assets'
     </div>
     <div class='h-[700px] w-full hidden lg:block'>
       <img
-        src='/contact-image.png'
+        src='/contact-image.webp'
         alt='contacto'
         class='h-full w-full object-cover 2xl:object-left rounded-2xl'
       />
     </div>
   </div>
 </section>
-
-<script>
-  ;(function () {
-    var e = document.getElementById('select')
-    e.onchange = function () {
-      if (e.value != 'null') {
-        e.style.color = '#000'
-      } else {
-        e.style.color = '#aaa'
-      }
-    }
-  })()
-</script>

@@ -4,15 +4,20 @@ import { Image } from 'astro:assets'
 
 <section
   class='h-full 2xl:h-screen bg-linear-to-b from-[#f8f9fa] via-[#e9ecef] to-[#dce6f1] 2xl:px-25 lg:px-10 px-8 py-25'
+  id='AboutUs'
 >
   <div class='h-full max-w-[1540px] mx-auto'>
     <div class='w-full flex flex-col h-full boder-black'>
       <!-- PRIMER BLOQUE / about us -->
-      <div class='flex lg:flex-row flex-col w-full justify-end lg:p-0'>
+      <div
+        class='flex lg:flex-row flex-col justify-end items-start lg:p-0 w-full h-full'
+      >
         <h1
-          class='text-right 2xl:text-7xl lg:text-6xl text-5xl text-gray-900 font-extrabold'
+          class='lg:text-5xl 2xl:text-7xl text-4xl font-extrabold h-auto w-full flex flex-col'
         >
-          About <br />US
+          <span class='bg-gray-900 h-full p-2 text-[#fff] text-right'
+            >About</span
+          ><span class='h-full p-2 text-right'>Us</span>
         </h1>
       </div>
       <!-- CUARTO BLOQUE / red corner sm -->
@@ -27,7 +32,7 @@ import { Image } from 'astro:assets'
         class='flex flex-col lg:flex-row h-full w-full items-center justify-center py-5 lg:py-2 lg:px-0 gap-5 lg:gap-10 text-gray-900'
       >
         <div
-          class='flex flex-col items-left gap-5 max-w-[800px] p-10 shadow-2xl border-l-8 border-gray-900 bg-white'
+          class='flex flex-col items-left gap-5 max-w-[800px] p-10 shadow-2xl border-l-8 border-gray-900 bg-white hover:scale-110 hover:transform transition-all'
         >
           <h2
             class='text-3xl hidden lg:block font-extrabold uppercase text-gray-900'
