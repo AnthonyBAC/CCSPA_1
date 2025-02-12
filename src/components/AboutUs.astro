@@ -3,19 +3,19 @@ import { Image } from 'astro:assets'
 ---
 
 <section
-  class='h-full 2xl:h-screen bg-white lg:p-25 2xl:px-25 lg:px-10 px-8 py-25'
+  class='h-full 2xl:h-screen bg-linear-to-b from-[#f8f9fa] via-[#e9ecef] to-[#dce6f1] 2xl:px-25 lg:px-10 px-8 py-25'
 >
   <div class='h-full max-w-[1540px] mx-auto'>
     <div class='w-full flex flex-col h-full boder-black'>
       <!-- PRIMER BLOQUE / about us -->
       <div class='flex lg:flex-row flex-col w-full justify-end lg:p-0'>
         <h1
-          class='text-right 2xl:text-8xl lg:text-6xl text-5xl text-gray-900 font-extrabold'
+          class='text-right 2xl:text-7xl lg:text-6xl text-5xl text-gray-900 font-extrabold'
         >
           About <br />US
         </h1>
       </div>
-      <!-- CUARTO BLOQUE / red corner lg -->
+      <!-- CUARTO BLOQUE / red corner sm -->
       <div class='h-full w-full justify-start items-end lg:hidden'>
         <div
           class='bg-[#cd0000] size-[100px] lg:size-[150px] rounded-tr-[100%] max-h-[250pxv ]'
@@ -27,7 +27,7 @@ import { Image } from 'astro:assets'
         class='flex flex-col lg:flex-row h-full w-full items-start justify-center py-5 lg:py-2 lg:px-0 gap-5 lg:gap-10 text-gray-900'
       >
         <div
-          class='flex flex-col items-left gap-5 max-w-[800px] p-10 shadow-2xl border-l-8 border-gray-900'
+          class='flex flex-col items-left gap-5 max-w-[800px] p-10 shadow-2xl border-l-8 border-gray-900 bg-white'
         >
           <h2
             class='text-3xl hidden lg:block font-extrabold uppercase text-gray-900'
@@ -52,7 +52,11 @@ import { Image } from 'astro:assets'
               width={250}
               height={250}
             />
-            <div class='flex w-full h-full justify-end'>
+            <div class='relative flex w-full h-full justify-end'>
+              <span
+                class='text-2xl absolute 2xl:left-50 top-[-10px] xs:left-26 sm:right-62 font-medium'
+                >+</span
+              >
               <p class='h-full flex text-2xl font-extrabold text-right'>
                 14 años de experiencia
               </p>
@@ -79,7 +83,7 @@ import { Image } from 'astro:assets'
         </div> -->
       </div>
       <!-- CUARTO BLOQUE / red corner lg -->
-      <div class='h-full w-full justify-start items-end hidden lg:block'>
+      <div class='h-full w-full flex justify-start items-end hidden lg:flex'>
         <div
           class='bg-[#cd0000] size-[100px] lg:size-[150px] rounded-tr-[100%] max-h-[250pxv ]'
         >

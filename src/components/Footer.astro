@@ -2,18 +2,10 @@
 import { Image } from 'astro:assets'
 ---
 
-<div class='w-full flex justify-center px-10 pb-10'>
-  <Image
-    src='/logo.svg'
-    alt='ccu logo'
-    width={300}
-    height={300}
-  />
-</div>
 <footer
-  class='bg-[#003162] text-neutral-content flex flex-col gap-10 lg:flex-row p-10 text-sm text-left'
+  class='bg-gray-900 text-neutral-content flex flex-col gap-10 lg:grid lg:grid-cols-3 p-10 text-sm text-left'
 >
-  <div class='flex lg:flex-row flex-grow flex-col basis-0 gap-10'>
+  <div class='flex lg:flex-row flex-grow flex-col gap-10'>
     <nav class='flex flex-col gap-2'>
       <h6 class='footer-title'>Redes Sociales</h6>
       <a class='link link-hover'>Whatsapp</a>
@@ -28,7 +20,7 @@ import { Image } from 'astro:assets'
   </div>
 
   <div class='h-full w-full flex justify-center items-end'>
-    <h6 class='italic text-center h-full'>
+    <h6 class='italic'>
       2025 © CentralClima SPA – Todos los derechos reservados
     </h6>
   </div>
