@@ -1,0 +1,32 @@
+---
+import { Image } from 'astro:assets'
+---
+
+<button
+  class='whatsappIcon fixed z-20 right-7 bottom-7 flex gap-3'
+  id='whatsappIcon'
+>
+  <a
+    href='https://wa.me/957242744'
+    target='_blank'
+    class='w-[135px] h-auto bg-white text-gray-900 shadow-2xl flex-col justify-center items-end rounded-lg px-2 py-1 hover:scale-[1.1] hover:transform transition-all hidden lg:flex'
+  >
+    <p class='font-light text-sm'>¿Necesitas ayuda?</p>
+    <p class='font-extrabold text-sm'>¡Contactanos!</p>
+  </a>
+  <a
+    target='_blank'
+    href='https://wa.me/957242744'
+    class='flex justify-center items-center'
+  >
+    <Image
+      src='/whatsapp.svg'
+      alt='whatsapp'
+      width={45}
+      height={45}
+      class='hover:scale-[1.2] hover:transform transition-all'
+    />
+  </a>
+</button>
+
+<script></script>

@@ -13,7 +13,10 @@ select {
 }
 
 
-
+#whatsapp {
+    color: #25D366;
+    /* Cambia el color del SVG */
+}
 
 p,
 a,
