@@ -1,19 +1,11 @@
 import { defineMiddleware } from "astro/middleware";
 
 export const onRequest = defineMiddleware((context, next) => {
-  const auth = context.request.headers.get("authorization");
+  const allowedIP = "XXX.XXX.XXX.XXX"; // Cambia esto por tu IP pública.
+  const clientIP = context.request.headers.get("x-forwarded-for");
 
-  const USER = import.meta.env.AUTH_USER;
-  const PASS = import.meta.env.AUTH_PASS;
-  const validAuth = `Basic ${btoa(`${USER}:${PASS}`)}`;
-
-  if (auth !== validAuth) {
-    return new Response("Unauthorized", {
-      status: 401,
-      headers: {
-        "WWW-Authenticate": 'Basic realm="Protected"',
-      },
-    });
+  if (clientIP !== allowedIP) {
+    return new Response("Acceso denegado", { status: 403 });
   }
 
   return next();
