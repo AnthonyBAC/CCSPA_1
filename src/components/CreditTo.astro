@@ -1,1 +1,44 @@
-<div>asd</div>
+---
+import Footer from './Footer.astro'
+---
+
+<header
+  class='bg-linear-to-t from-[#f8f9fa] via-[#e9ecef] to-[#dce6f1] h-screen flex flex-col'
+>
+  <nav
+    class='w-full lg:h-[100px] h-[250px] p-[40px] flex bg-gray-900 text-neutral-content justify-center items-center'
+  >
+    <div class='w-[1440px] flex justify-start ritems-center'>
+      <a href='/'>Volver</a>
+    </div>
+  </nav>
+  <div
+    class='h-screen flex flex-col justify-start items-center max-w-[1200px] mx-auto p-10'
+  >
+    <h2>Creditos</h2>
+    <div class='flex flex-col'>
+      <div class='flex flex-col gap-5'>
+        <h3>Iconos</h3>
+        <div>
+          <h4 class='text-1xl font-extrabold'>Free Whatsapp Logo Icon</h4>
+          <p>
+            Item ID: 721985 <a
+              href='https://iconscout.com/free-icon-pack/social-media-50'
+              class='underline'
+              >Social Media Icon Pack in Logos</a
+            > ,<a
+              href='https://iconscout.com/categories/social-media/icons'
+              class='underline'
+              >Social Media</a
+            > Category Available in <a
+              href='https://iconscout.com/icon-styles/flat'
+              class='underline'
+              >Flat Icon Style</a
+            >
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <Footer />
+</header>
