@@ -45,7 +45,7 @@ if (Astro.request.method === 'POST') {
     placeholder='Nombre'
     oninvalid="setCustomValidity('Requerido, solo letras y espacios')"
     oninput="setCustomValidity('')"
-    class='input input-bordered input-sm w-full max-w-xs'
+    class='input input-bordered input-sm w-full max-w-xs bg-white'
   />
 
   <input
@@ -59,7 +59,7 @@ if (Astro.request.method === 'POST') {
     minlength='2'
     oninvalid="setCustomValidity('Requerido, solo letras y espacios')"
     oninput="setCustomValidity('')"
-    class='input input-bordered input-sm w-full max-w-xs'
+    class='input input-bordered input-sm w-full max-w-xs bg-white'
   />
   <input
     id='phone'
@@ -72,7 +72,7 @@ if (Astro.request.method === 'POST') {
     required
     oninvalid="setCustomValidity('Requerido, recuerda el formato debe ser 9 digitos sin espacios')"
     oninput="setCustomValidity('')"
-    class='tel input input-bordered input-sm w-full max-w-xs'
+    class='tel input input-bordered input-sm w-full max-w-xs bg-white'
   />
   <input
     id='email'
@@ -83,13 +83,13 @@ if (Astro.request.method === 'POST') {
     required
     oninvalid="setCustomValidity('Requerido, recuerda debes ingresar un email valido con @ y .com')"
     oninput="setCustomValidity('')"
-    class='input input-sm w-full max-w-xs'
+    class='input input-sm w-full max-w-xs bg-white'
   />
   <select
     id='select'
     name='select'
     id='select'
-    class='select select-bordered select-sm w-full max-w-xs px-3'
+    class='select select-bordered select-sm w-full max-w-xs px-3 bg-white'
   >
     <option
       value='Tipo de lugar'
@@ -99,10 +99,26 @@ if (Astro.request.method === 'POST') {
       class='p-0'
       >Tipo de lugar</option
     >
-    <option value='Casa'>Casa</option>
-    <option value='Oficina'>Oficina</option>
-    <option value='Departamento'>Departamento</option>
-    <option value='Otro'>Otro</option>
+    <option
+      value='Casa'
+      class='bg-white'
+      >Casa</option
+    >
+    <option
+      value='Oficina'
+      class='bg-white'
+      >Oficina</option
+    >
+    <option
+      value='Departamento'
+      class='bg-white'
+      >Departamento</option
+    >
+    <option
+      value='Otro'
+      class='bg-white'
+      >Otro</option
+    >
   </select>
   <textarea
     id='message'
@@ -110,11 +126,11 @@ if (Astro.request.method === 'POST') {
     placeholder='Message'
     rows='4'
     cols='50'
-    class='input input-bordered input-sm w-full max-w-xs max-h-[200px] h-[100px] py-2 resize-none'
+    class='input input-bordered input-sm w-full max-w-xs max-h-[200px] h-[100px] py-2 resize-none bg-white'
   ></textarea>
   <div class='flex w-full lg:justify-end justify-center'>
     <button
-      class='btn max-w-[400px] w-[150px]'
+      class='btn max-w-[400px] w-[150px] bg-white text-gray-900'
       type='submit'
       >Enviar</button
     >
