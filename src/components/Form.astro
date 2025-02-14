@@ -70,7 +70,7 @@ if (Astro.request.method === 'POST') {
     min='9'
     pattern='[9]{1}-[0-9]{4}-[0-9]{4}'
     required
-    oninvalid="setCustomValidity('Requerido, recuerda el formato debe ser 9 digitos sin espacios')"
+    oninvalid="setCustomValidity('Requerido, formato 9 dígitos sin espacios')"
     oninput="setCustomValidity('')"
     class='tel input input-bordered input-sm w-full max-w-xs bg-white'
   />
@@ -81,7 +81,7 @@ if (Astro.request.method === 'POST') {
     pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$'
     placeholder='Email'
     required
-    oninvalid="setCustomValidity('Requerido, recuerda debes ingresar un email valido con @ y .com')"
+    oninvalid="setCustomValidity('Requerido, ingresar e-mail valido')"
     oninput="setCustomValidity('')"
     class='input input-sm w-full max-w-xs bg-white'
   />
@@ -157,12 +157,14 @@ if (Astro.request.method === 'POST') {
 <script>
   const form = document.getElementById('form')
   const result = document.getElementById('result')
-
+  // @ts-ignore
   form.addEventListener('submit', function (e) {
     e.preventDefault()
+    // @ts-ignore
     const formData = new FormData(form)
     const object = Object.fromEntries(formData)
     const json = JSON.stringify(object)
+    // @ts-ignore
     result.innerHTML = 'Enviando...'
 
     fetch('https://api.web3forms.com/submit', {
@@ -176,19 +178,24 @@ if (Astro.request.method === 'POST') {
       .then(async response => {
         let json = await response.json()
         if (response.status == 200) {
+          // @ts-ignore
           result.innerHTML = 'El formulario ha sido enviado'
         } else {
           console.log(response)
+          // @ts-ignore
           result.innerHTML = json.message || 'Ocurrio un error'
         }
       })
       .catch(error => {
         console.log(error)
+        // @ts-ignore
         result.innerHTML = 'Ocurrio un error'
       })
       .then(function () {
+        // @ts-ignore
         form.reset()
         setTimeout(() => {
+          // @ts-ignore
           result.style.display = 'none'
         }, 3000)
       })
