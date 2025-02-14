@@ -1,7 +1,9 @@
 @import "tailwindcss";
 @plugin 'daisyui';
-
-
+/* tailwind css v4.x */
+@import "tailwindcss";
+@import "tailwindcss-animated";
+@import "tailwindcss-intersect";
 
 select {
     color: #00000080;
@@ -24,7 +26,8 @@ label,
 input,
 option,
 select,
-text-area {
+text-area,
+.btn {
     font-family: 'Roboto', sans-serif;
 }
 

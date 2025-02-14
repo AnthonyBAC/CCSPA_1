@@ -1,0 +1,180 @@
+---
+if (Astro.request.method === 'POST') {
+  try {
+    const data = await Astro.request.formData()
+    const name = data.get('name')
+    const lastName = data.get('lastName')
+    const phone = data.get('phone')
+    const email = data.get('email')
+    const select = data.get('select')
+    const message = data.get('message')
+    // Do something with the data
+  } catch (error) {
+    if (error instanceof Error) {
+      console.error(error.message)
+    }
+  }
+}
+---
+
+<form
+  id='form'
+  action='https://api.web3forms.com/submit'
+  method='POST'
+  class='flex flex-col gap-5 w-full justify-center items-center'
+>
+  <input
+    type='hidden'
+    name='access_key'
+    value='1037274f-825a-45c7-a6fb-16d2951f078f'
+  />
+  <input
+    type='hidden'
+    name='subject'
+    value='Nuevo contacto desde la web'
+  />
+
+  <input
+    id='name'
+    type='text'
+    name='name'
+    pattern='[a-zA-ZÀ-ÿ\s]{1,40}'
+    required
+    maxlength='50'
+    minlength='2'
+    placeholder='Nombre'
+    oninvalid="setCustomValidity('Requerido, solo letras y espacios')"
+    oninput="setCustomValidity('')"
+    class='input input-bordered input-sm w-full max-w-xs'
+  />
+
+  <input
+    id='lastName'
+    type='text'
+    name='lastName'
+    pattern='[a-zA-ZÀ-ÿ\s]{1,40}'
+    placeholder='Apellido'
+    required
+    maxlength='50'
+    minlength='2'
+    oninvalid="setCustomValidity('Requerido, solo letras y espacios')"
+    oninput="setCustomValidity('')"
+    class='input input-bordered input-sm w-full max-w-xs'
+  />
+  <input
+    id='phone'
+    type='tel'
+    name='phone'
+    placeholder='Nr° Celular'
+    maxlength='12'
+    min='9'
+    pattern='[9]{1}-[0-9]{4}-[0-9]{4}'
+    required
+    oninvalid="setCustomValidity('Requerido, recuerda el formato debe ser 9 digitos sin espacios')"
+    oninput="setCustomValidity('')"
+    class='tel input input-bordered input-sm w-full max-w-xs'
+  />
+  <input
+    id='email'
+    type='email'
+    name='email'
+    pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$'
+    placeholder='Email'
+    required
+    oninvalid="setCustomValidity('Requerido, recuerda debes ingresar un email valido con @ y .com')"
+    oninput="setCustomValidity('')"
+    class='input input-sm w-full max-w-xs'
+  />
+  <select
+    id='select'
+    name='select'
+    id='select'
+    class='select select-bordered select-sm w-full max-w-xs px-3'
+  >
+    <option
+      value='Tipo de lugar'
+      hidden
+      disabled
+      selected
+      class='p-0'
+      >Tipo de lugar</option
+    >
+    <option value='Casa'>Casa</option>
+    <option value='Oficina'>Oficina</option>
+    <option value='Departamento'>Departamento</option>
+    <option value='Otro'>Otro</option>
+  </select>
+  <textarea
+    id='message'
+    name='message'
+    placeholder='Message'
+    rows='4'
+    cols='50'
+    class='input input-bordered input-sm w-full max-w-xs max-h-[200px] h-[100px] py-2 resize-none'
+  ></textarea>
+  <div class='flex w-full lg:justify-end justify-center'>
+    <button
+      class='btn max-w-[400px] w-[150px]'
+      type='submit'
+      >Enviar</button
+    >
+  </div>
+  <div
+    id='result'
+    class='text-white font-[Montserrat] font-bold text-center'
+  >
+  </div>
+</form>
+<script>
+  document.getElementById('phone')?.addEventListener('input', function () {
+    formatPhone(this as HTMLInputElement)
+  })
+  function formatPhone(input: HTMLInputElement) {
+    let value = input.value.replace(/\D/g, '')
+    if (value.length > 1)
+      value = value.substring(0, 1) + '-' + value.substring(1)
+    if (value.length > 6)
+      value = value.substring(0, 6) + '-' + value.substring(6)
+    input.value = value.substring(0, 11)
+  }
+</script>
+<script>
+  const form = document.getElementById('form')
+  const result = document.getElementById('result')
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault()
+    const formData = new FormData(form)
+    const object = Object.fromEntries(formData)
+    const json = JSON.stringify(object)
+    result.innerHTML = 'Enviando...'
+
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+      body: json,
+    })
+      .then(async response => {
+        let json = await response.json()
+        if (response.status == 200) {
+          result.innerHTML = 'El formulario ha sido enviado'
+        } else {
+          console.log(response)
+          result.innerHTML = json.message || 'Ocurrio un error'
+        }
+      })
+      .catch(error => {
+        console.log(error)
+        result.innerHTML = 'Ocurrio un error'
+      })
+      .then(function () {
+        form.reset()
+        setTimeout(() => {
+          result.style.display = 'none'
+        }, 3000)
+      })
+  })
+</script>

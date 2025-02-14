@@ -1,3 +1,7 @@
+---
+import Form from './Form.astro'
+---
+
 <section
   class='h-full w-full 2xl:px-25 py-25 lg:px-10 px-8 justify-center items-center gap-10 bg-linear-to-t from-[#f8f9fa] via-[#e9ecef] to-[#dce6f1]'
 >
@@ -8,108 +12,12 @@
       class='flex flex-col max-w-[800px] w-full lg:h-full items-start justify-evenly p-10 rounded-2xl'
     >
       <h1
-        class='2xl:text-5xl lg:text-3xl text-2xl text-[#d3d3d3] font-bold py-5'
+        class='2xl:text-5xl lg:text-3xl text-2xl text-[#d3d3d3] pb-5 font-bold'
       >
         Formulario <br /> Contacto
       </h1>
       <div class='flex flex-col w-full justify-center'>
-        <form
-          action=''
-          class='flex flex-col gap-5 w-full'
-        >
-          <!-- Nombre y apellido -->
-          <div
-            class='2xl:grid 2xl:grid-cols-2 flex flex-col gap-5 2xl:justify-center 2xl:items-center'
-          >
-            <div class='flex'>
-              <input
-                type='text'
-                name='name'
-                placeholder='Nombre'
-                class='border-0 bg-[#fff] border-b-2 rounded-lg border-[#00000030] px-2 py-1 text-gray-900 focus:outline-[#00000030] focus:outline-1 placeholder:text-[#00000080] placeholder:font-light lg:w-[200px] w-full'
-              />
-            </div>
-            <div class='flex'>
-              <input
-                type='text'
-                name='lastName'
-                placeholder='Apellido'
-                class='border-0 bg-[#fff] border-b-2 rounded-lg border-[#00000030] px-2 py-1 text-gray-900 focus:outline-[#00000030] focus:outline-1 placeholder:text-[#00000080] placeholder:font-light lg:w-[200px] w-full'
-              />
-            </div>
-          </div>
-          <!-- Nombre y apellido -->
-          <!-- Telefono -->
-          <div class='flex gap-5 justify-start items-center'>
-            <div class='flex w-full lg:'>
-              <input
-                type='number'
-                name='phone'
-                placeholder='Telefono'
-                class='border-0 bg-[#fff] border-b-2 rounded-lg border-[#00000030] px-2 py-1 text-gray-900 focus:outline-[#00000030] focus:outline-1 placeholder:text-[#00000080] placeholder:font-light lg:w-[200px] w-full'
-              />
-            </div>
-          </div>
-          <!-- Telefono -->
-          <!-- Email -->
-          <div class='grid gap-5 lg:justify-start items-center w-full'>
-            <div class='flex w-full'>
-              <input
-                type='email'
-                name='email'
-                placeholder='Email'
-                class='border-0 bg-[#fff] border-b-2 rounded-lg border-[#00000030] px-2 py-1 text-gray-900 focus:outline-[#00000030] focus:outline-1 placeholder:text-[#00000080] placeholder:font-light lg:w-[200px] w-full'
-              />
-            </div>
-          </div>
-          <!-- Email -->
-          <!-- Tipo de lugar -->
-          <div class='flex items-center'>
-            <select
-              id='select'
-              class='flex g:w-[50%] lg:w-[200px] w-full items-center border-b-2 border-0 rounded-lg border-[#00000030] px-2 py-1 focus:outline-[#00000030] focus:outline-1 bg-[#fff'
-            >
-              <option
-                hidden
-                value='null'
-                selected
-                disabled
-                >Tipo de espacio</option
-              >
-              <option
-                class='text-black'
-                value='casa'
-                >Casa</option
-              >
-              <option
-                class='text-black'
-                value='departamento'
-                >Departamento</option
-              >
-              <option
-                class='text-black'
-                value='depa'
-                >Departamento</option
-              >
-            </select>
-          </div>
-          <div class='w-full h-[100px] flex'>
-            <textarea
-              style='resize: none;'
-              placeholder='Mensaje'
-              id='message'
-              name='message'
-              class='border-0 w-full h-full bg-[#ffffff] border-b-2 rounded-lg border-[#00000030] px-2 py-1 text-gray-900 focus:outline-[#00000030] focus:outline-1'
-            ></textarea>
-          </div>
-          <div class='w-full flex justify-end'>
-            <button
-              class='bg-[#003162] h-12 lg:w-[200px] w-full rounded-lg text-white font-bold hover:bg-[#00214d] transition-all'
-            >
-              Enviar
-            </button>
-          </div>
-        </form>
+        <slot />
       </div>
     </div>
     <div class='h-[700px] w-full hidden lg:block'>

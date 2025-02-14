@@ -2,7 +2,7 @@
 import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
 import Navigation from '../components/Navigation.astro'
-import { ClientRouter } from 'astro:transitions'
+
 import '../styles/global.css'
 ---
 
@@ -23,9 +23,12 @@ import '../styles/global.css'
       type='image/svg+xml'
       href='/favicon.svg'
     />
+    <script
+      defer
+      src='https://unpkg.com/tailwindcss-intersect@2.x.x/dist/observer.min.js'
+    ></script>
 
     <title>CentralClima SPA</title>
-    <ClientRouter />
   </head>
   <body>
     <Navigation />
@@ -35,6 +38,10 @@ import '../styles/global.css'
       <slot />
     </main>
     <Footer />
+    <script src='https://unpkg.com/aos@next/dist/aos.js'></script>
+    <script>
+      AOS.init()
+    </script>
   </body>
 </html>
 
@@ -46,5 +53,6 @@ import '../styles/global.css'
     height: 100%;
     color: #101820;
     background-color: white;
+    scroll-behavior: smooth;
   }
 </style>
