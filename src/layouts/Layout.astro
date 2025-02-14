@@ -4,11 +4,14 @@ import Footer from '../components/Footer.astro'
 import Navigation from '../components/Navigation.astro'
 
 import '../styles/global.css'
+
+const { title } = Astro.props
 ---
 
 <!doctype html>
 <html lang='es'>
   <head>
+    <title>{title}</title>
     <meta charset='UTF-8' />
     <meta
       name='viewport'
@@ -21,7 +24,7 @@ import '../styles/global.css'
     <link
       rel='icon'
       type='image/svg+xml'
-      href='/favicon.svg'
+      href='/icon.svg'
     />
     <script
       defer
@@ -30,6 +33,11 @@ import '../styles/global.css'
 
     <title>CentralClima SPA</title>
   </head>
+  <script>
+    window.addEventListener('hashchange', () => {
+      history.replaceState(null, null, window.location.pathname)
+    })
+  </script>
   <body>
     <Navigation />
     <Header />
@@ -39,9 +47,6 @@ import '../styles/global.css'
     </main>
     <Footer />
     <script src='https://unpkg.com/aos@next/dist/aos.js'></script>
-    <script>
-      AOS.init()
-    </script>
   </body>
 </html>
 

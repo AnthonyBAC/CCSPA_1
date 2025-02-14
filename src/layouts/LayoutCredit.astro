@@ -1,10 +1,12 @@
 ---
 import '../styles/global.css'
+const { title } = Astro.props
 ---
 
 <!doctype html>
 <html lang='es'>
   <head>
+    <title>{title}</title>
     <meta charset='UTF-8' />
     <meta
       name='viewport'
@@ -17,9 +19,13 @@ import '../styles/global.css'
     <link
       rel='icon'
       type='image/svg+xml'
-      href='/favicon.svg'
+      href='/icon.svg'
     />
-
+    <script>
+      window.addEventListener('hashchange', event => {
+        history.replaceState(null, null, window.location.pathname)
+      })
+    </script>
     <title>CentralClima SPA</title>
   </head>
   <body>
