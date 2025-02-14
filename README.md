@@ -8,17 +8,15 @@ Central Clima, page for a company dedicated to the service, maintenance and sale
 
 ![TailwindCSS](https://img.shields.io/badge/Tailwind%20CSS-%2338B2AC.svg?logo=tailwind-css&logoColor=white)
 
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=000)
-
-
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=fff)
 
 ## Libraries
 
-| List |
-| ---  |
-| dotenv |
-| nodemailer |
-| tailwindcss-animate |
+| List                 |
+| -------------------- |
+| dotenv               |
+| nodemailer           |
+| tailwindcss-animate  |
 | taildincss-intersect |
 
 # Desktop view
@@ -34,4 +32,3 @@ Central Clima, page for a company dedicated to the service, maintenance and sale
 ![image](https://github.com/user-attachments/assets/ffe9ab17-e418-4a5b-9b2b-e7ccb731ce06)
 
 ![image](https://github.com/user-attachments/assets/67408de4-a77d-4d1a-b0bd-34c31f91e5dd)
- 
