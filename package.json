@@ -19,5 +19,8 @@
   },
   "devDependencies": {
     "daisyui": "5.0.0-beta.6"
+  },
+  "engines": {
+    "node": ">=18.20.6"
   }
 }
