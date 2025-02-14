@@ -1,15 +1,11 @@
-import { c as createComponent, r as renderTemplate, b as renderSlot, d as renderHead, m as maybeRenderHead, a as renderComponent } from '../chunks/astro/server_9W7qMay2.mjs';
+import { c as createComponent, r as renderTemplate, b as renderHead, d as renderSlot, m as maybeRenderHead, a as renderComponent } from '../chunks/astro/server_Bn4qGSoX.mjs';
 /* empty css                                 */
 /* empty css                                  */
-import { $ as $$Footer } from '../chunks/Footer_DMLqbUsq.mjs';
+import { $ as $$Footer } from '../chunks/Footer_0XnLsvcZ.mjs';
 export { renderers } from '../renderers.mjs';
 
-var __freeze = Object.freeze;
-var __defProp = Object.defineProperty;
-var __template = (cooked, raw) => __freeze(__defProp(cooked, "raw", { value: __freeze(cooked.slice()) }));
-var _a;
 const $$LayoutCredit = createComponent(($$result, $$props, $$slots) => {
-  return renderTemplate(_a || (_a = __template(['<html lang="es" data-astro-cid-6r6ls5qg> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><meta name="description" content="CentralClima SPA"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><title>CentralClima SPA</title>', "</head> <body data-astro-cid-6r6ls5qg> <main data-astro-cid-6r6ls5qg> ", ' </main>  <script src="https://web3forms.com/client/script.js" async defer><\/script></body></html>'])), renderHead(), renderSlot($$result, $$slots["default"]));
+  return renderTemplate`<html lang="es" data-astro-cid-6r6ls5qg> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><meta name="description" content="CentralClima SPA"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><title>CentralClima SPA</title>${renderHead()}</head> <body data-astro-cid-6r6ls5qg> <main data-astro-cid-6r6ls5qg> ${renderSlot($$result, $$slots["default"])} </main> </body></html>`;
 }, "/home/anthony/CCSPA_1_1/src/layouts/LayoutCredit.astro", undefined);
 
 const $$CreditTo = createComponent(($$result, $$props, $$slots) => {
