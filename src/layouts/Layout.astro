@@ -20,25 +20,31 @@ import '../styles/global.css'
         },
       }}
       extend={{
+        link: [
+          {
+            rel: 'sitemap',
+            href: '/sitemap-index.xml',
+          },
+        ],
         meta: [
           {
             name: 'description',
             content:
-              'CentralClima SPA - Soluciones Aire Acondicionado integrales para empresas y Hogares - Con mas de 20 años de experiencia en el mercado. - nos dedicamos instalación, mantención, venta y servicio técnico de aire acondicionado.',
+              'CentralClima SPA - Soluciones Aire Acondicionado integrales para empresas y Hogares - Con mas de 20 años de experiencia en el mercado.',
           },
           {
             name: 'keywords',
             content:
               'CentralClima SPA, aire acondicionado, climatizacion, venta de aire acondicionado, instalacion aire acondicionado',
           },
+          {
+            name: 'viewport',
+            content: 'width=device-width, initial-scale=1.0',
+          },
         ],
       }}
     />
 
-    <link
-      rel='sitemap'
-      href='/sitemap-index.xml'
-    />
     <meta charset='UTF-8' />
     <meta
       name='viewport'
