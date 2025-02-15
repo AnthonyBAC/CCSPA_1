@@ -32,57 +32,41 @@ import { Image } from 'astro:assets'
         class='flex flex-col lg:flex-row h-full w-full items-center justify-center py-5 lg:py-2 lg:px-0 gap-5 lg:gap-10 text-gray-900'
       >
         <div
-          class='flex flex-col items-left gap-5 max-w-[800px] p-10 shadow-2xl border-l-8 border-gray-900 bg-white hover:scale-110 hover:transform transition-all intersect:animate-fade-up intersect-once'
+          class='flex flex-col lg:items-left items-center gap-5 max-w-[800px] p-10 shadow-2xl border-l-8 border-gray-900 bg-white hover:scale-110 hover:transform transition-all intersect:animate-fade-up intersect-once'
         >
-          <h2 class='text-3xl font-extrabold uppercase text-gray-900'>
+          <h2
+            class='md:text-3xl text-2xl font-extrabold uppercase text-gray-900 w-full text-center md:text-left'
+          >
             Nuestra misión
           </h2>
 
-          <p class='text-1xl font-light text-left text-balance'>
+          <p class='text-1xl font-light md:text-left text-center text-balance'>
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
             Repellendus, ad quasi! Eveniet dolore saepe iure at asperiores rerum
             ad obcaecati. Lorem ipsum dolor sit amet consectetur adipisicing
             elit. Obcaecati magnam dolorem sequi nostrum, dolor quos molestiae
           </p>
           <div
-            class=' w-full h-full flex flex-col md:flex-row justify-between lg:items-center py-5 gap-5 lg:gap-0'
+            class='w-full h-full flex flex-col md:flex-row justify-between items-center pt-5 gap-5 lg:gap-0'
           >
             <Image
               src='/logo.svg'
               alt='ccu logo'
-              width={250}
-              height={250}
+              width={200}
+              height={200}
             />
-            <div class=' flex  h-full justify-end'>
-             
-              <p class='h-full relative flex text-2xl font-extrabold lg:text-right text-left py-1 px-2'>
-                <span
-                class='text-2xl absolute left-0 flex top-[-10px] font-medium'
-                >+</span
+            <div class='flex h-full justify-end md:text-2xl text-1xl'>
+              <p
+                class='h-full relative flex font-extrabold lg:text-right text-left py-1 px-2'
               >
+                <span class='absolute left-0 flex top-[-10px] font-medium'
+                  >+</span
+                >
                 20 años de experiencia
               </p>
             </div>
           </div>
         </div>
-        <!-- TERCER BLOQUE / stats -->
-        <!-- <div
-          class='w-full h-full flex flex-col gap-10 items-start justify-center lg:mb-0 mb-10 text-gray-900'
-        >
-          <div
-            class='relative flex flex-col size-[300px] h-full items-start border-1 border-[#cd0000] p-10 shadow-lg'
-          >
-            <div class='w-full h-full'>
-              <h2 class='absolute left-5 top-5 text-4xl font-bold'>+</h2>
-              <h3 class='text-7xl font-bold'>14</h3>
-            </div>
-            <div class='w-full h-full flex items-center'>
-              <p class='text-2xl font-light text-[#cd0000]'>
-                Años de experiencia
-              </p>
-            </div>
-          </div>
-        </div> -->
       </div>
       <!-- CUARTO BLOQUE / red corner lg -->
       <div class='w-full justify-start items-end hidden lg:flex'>
@@ -102,16 +86,5 @@ import { Image } from 'astro:assets'
   }
 </style>
 <style>
-  @media ((min-width:0px)(max-width: 390px) {
-       .mas-signo {
-        left:105px;
-       }
-  } 
-  @media (min-width: 390px) and (max-width: 414px)  {
-       .mas-signo {
-        left:0;
-       }
-  } 
-
-
+  @media;
 </style>
