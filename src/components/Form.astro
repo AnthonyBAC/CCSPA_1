@@ -181,7 +181,7 @@ const siteKey = import.meta.env.RECAPTCHA_SITE_KEY
     if (!recaptchaResponse) {
       result.innerHTML = 'Por favor, complete el reCAPTCHA'
       result.style.display = 'block'
-      return
+      return // Stop form submission if reCAPTCHA isn't filled
     }
 
     // Collect form data
