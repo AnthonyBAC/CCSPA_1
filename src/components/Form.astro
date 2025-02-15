@@ -15,8 +15,8 @@ if (Astro.request.method === 'POST') {
     }
   }
 }
-
-const siteKey = import.meta.env.RECAPTCHA_SITE_KEY
+//llamando key para captcha
+// const siteKey = import.meta.env.RECAPTCHA_SITE_KEY
 ---
 
 <form
@@ -136,11 +136,12 @@ const siteKey = import.meta.env.RECAPTCHA_SITE_KEY
   >
     Powered by Web3Forms
   </p>
-  <div
+  <!-- Para captcha -->
+  <!-- <div
     class='g-recaptcha'
     data-sitekey={siteKey}
   >
-  </div>
+  </div> -->
 
   <div class='flex w-full justify-center lg:items-end items-center flex-col'>
     <button
@@ -171,28 +172,15 @@ const siteKey = import.meta.env.RECAPTCHA_SITE_KEY
 <script>
   const form = document.getElementById('form')
   const result = document.getElementById('result')
-
+  // @ts-ignore
   form.addEventListener('submit', function (e) {
     e.preventDefault()
-
-    // Get reCAPTCHA response token
-    const recaptchaResponse = grecaptcha.getResponse()
-
-    if (!recaptchaResponse) {
-      result.innerHTML = 'Por favor, complete el reCAPTCHA'
-      result.style.display = 'block'
-      return // Stop form submission if reCAPTCHA isn't filled
-    }
-
-    // Collect form data
+    // @ts-ignore
     const formData = new FormData(form)
-    formData.append('g-recaptcha-response', recaptchaResponse) // Add reCAPTCHA response to form data
-
     const object = Object.fromEntries(formData)
     const json = JSON.stringify(object)
-
+    // @ts-ignore
     result.innerHTML = 'Enviando...'
-    result.style.display = 'block'
 
     fetch('https://api.web3forms.com/submit', {
       method: 'POST',
@@ -203,21 +191,26 @@ const siteKey = import.meta.env.RECAPTCHA_SITE_KEY
       body: json,
     })
       .then(async response => {
-        const jsonResponse = await response.json()
+        let json = await response.json()
         if (response.status == 200) {
+          // @ts-ignore
           result.innerHTML = 'El formulario ha sido enviado'
         } else {
           console.log(response)
-          result.innerHTML = jsonResponse.message || 'Ocurrio un error'
+          // @ts-ignore
+          result.innerHTML = json.message || 'Ocurrio un error'
         }
       })
       .catch(error => {
         console.log(error)
+        // @ts-ignore
         result.innerHTML = 'Ocurrio un error'
       })
       .then(function () {
+        // @ts-ignore
         form.reset()
         setTimeout(() => {
+          // @ts-ignore
           result.style.display = 'none'
         }, 3000)
       })
