@@ -1,12 +1,24 @@
 ---
 import '../styles/global.css'
-const { title, description } = Astro.props
+import { SEO } from 'astro-seo'
 ---
 
 <!doctype html>
 <html lang='es'>
   <head>
-    <title>{title}</title>
+    <SEO
+      title='CentralClima SPA'
+      description='CentralClima SPA - Soluciones Aire Acondicionado integrales para empresas y Hogares - Con mas de 20 años de experiencia en el mercado. - nos dedicamos instalación, mantención, venta y servicio técnico de aire acondicionado.'
+      openGraph={{
+        basic: {
+          title: 'Atribuciones Créditos',
+          type: 'website',
+          image: '/logo.svg',
+          url: 'https://centralclimaspa.cl/Creditos',
+        },
+      }}
+    />
+
     <link
       rel='sitemap'
       href='/sitemap-index.xml'
@@ -15,10 +27,6 @@ const { title, description } = Astro.props
     <meta
       name='viewport'
       content='width=device-width'
-    />
-    <meta
-      name='description'
-      content={description}
     />
 
     <script>
