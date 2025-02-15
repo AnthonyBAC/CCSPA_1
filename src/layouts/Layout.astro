@@ -10,19 +10,28 @@ import '../styles/global.css'
 <html lang='es'>
   <head>
     <SEO
-      title='CentralClima SPA'
-      description='CentralClima SPA - Soluciones Aire Acondicionado integrales para empresas y Hogares - Con mas de 20 años de experiencia en el mercado. - nos dedicamos instalación, mantención, venta y servicio técnico de aire acondicionado.'
+      title='CentralClima SpA - Lo mejor en climatización'
       openGraph={{
         basic: {
-          title: 'CentralClima SPA',
+          title: 'CentralClima SpA',
           type: 'website',
           image: '/logo.svg',
-          url: 'https://centralclimaspa.cl',
+          url: 'https://centralclimaspa.cl/',
         },
-        optional: {
-          description:
-            'CentralClima SPA - Soluciones Aire Acondicionado integrales para empresas y Hogares - Con mas de 20 años de experiencia en el mercado. - Instalación, mantención, venta y servicio técnico de aire acondicionado.',
-        },
+      }}
+      extend={{
+        meta: [
+          {
+            name: 'description',
+            content:
+              'CentralClima SPA - Soluciones Aire Acondicionado integrales para empresas y Hogares - Con mas de 20 años de experiencia en el mercado. - nos dedicamos instalación, mantención, venta y servicio técnico de aire acondicionado.',
+          },
+          {
+            name: 'keywords',
+            content:
+              'CentralClima SPA, aire acondicionado, climatizacion, venta de aire acondicionado, instalacion aire acondicionado',
+          },
+        ],
       }}
     />
 
