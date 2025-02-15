@@ -3,8 +3,8 @@ import type { APIRoute } from 'astro';
 const robotsTxt = `
 User-agent: *
 Allow: /
-Sitemap: ${new URL('sitemap-index.xml', import.meta.env.SITE).href}
-`.trim();
+Sitemap: Sitemap: https://centralclimaspa.cl/sitemap-index.xml
+`;
 
 export const GET: APIRoute = () => {
   return new Response(robotsTxt, {
