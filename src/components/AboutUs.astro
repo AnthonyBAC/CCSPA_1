@@ -45,7 +45,7 @@ import { Image } from 'astro:assets'
             elit. Obcaecati magnam dolorem sequi nostrum, dolor quos molestiae
           </p>
           <div
-            class='w-full h-full flex flex-col lg:flex-row justify-start lg:items-center py-5 gap-5 lg:gap-0'
+            class=' w-full h-full flex flex-col md:flex-row justify-between lg:items-center py-5 gap-5 lg:gap-0'
           >
             <Image
               src='/logo.svg'
@@ -53,16 +53,13 @@ import { Image } from 'astro:assets'
               width={250}
               height={250}
             />
-            <div class='relative flex w-full h-full justify-end'>
-              <span
-                class='text-2xl absolute 2xl:right-62 hidden lg:block top-[-10px] font-medium'
+            <div class=' flex  h-full justify-end'>
+             
+              <p class='h-full relative flex text-2xl font-extrabold lg:text-right text-left py-1 px-2'>
+                <span
+                class='text-2xl absolute left-0 flex top-[-10px] font-medium'
                 >+</span
               >
-              <span
-                class='text-2xl absolute lg:hidden left-0 top-[-10px] font-medium'
-                >+</span
-              >
-              <p class='h-full flex text-2xl font-extrabold text-right'>
                 20 años de experiencia
               </p>
             </div>
@@ -103,4 +100,18 @@ import { Image } from 'astro:assets'
       0 5px 10px rgba(154, 160, 185, 0.1),
       0 15px 40px rgba(166, 173, 201, 0.4);
   }
+</style>
+<style>
+  @media ((min-width:0px)(max-width: 390px) {
+       .mas-signo {
+        left:105px;
+       }
+  } 
+  @media (min-width: 390px) and (max-width: 414px)  {
+       .mas-signo {
+        left:0;
+       }
+  } 
+
+
 </style>
