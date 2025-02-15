@@ -3,6 +3,7 @@ import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
 import Navigation from '../components/Navigation.astro'
 import { SEO } from 'astro-seo'
+
 import '../styles/global.css'
 ---
 
@@ -54,6 +55,11 @@ import '../styles/global.css'
       name='viewport'
       content='width=device-width'
     />
+    <script
+      src='https://www.google.com/recaptcha/api.js'
+      async
+      defer
+    ></script>
 
     <script
       defer
