@@ -16,12 +16,13 @@ if (Astro.request.method === 'POST') {
   }
 }
 //llamando key para captcha
-// const siteKey = import.meta.env.RECAPTCHA_SITE_KEY
+const siteKey = import.meta.env.RECAPTCHA_SITE_KEY
 ---
 
+<!-- action='https://api.web3forms.com/submit' -->
 <form
   id='form'
-  action='https://api.web3forms.com/submit'
+  action='https://usebasin.com/f/4904878e0508'
   method='POST'
   class='flex flex-col gap-5 w-full justify-center items-center'
 >
@@ -133,11 +134,11 @@ if (Astro.request.method === 'POST') {
   ></textarea>
 
   <!-- Para captcha -->
-  <!-- <div
+  <div
     class='g-recaptcha'
     data-sitekey={siteKey}
   >
-  </div> -->
+  </div>
   <p
     class='text-[14px] font-light text-[#d3d3d330] text-center lg:text-right w-full'
   >
@@ -169,18 +170,36 @@ if (Astro.request.method === 'POST') {
     input.value = value.substring(0, 11)
   }
 </script>
+<script
+  src='https://www.google.com/recaptcha/api.js'
+  async
+  defer
+></script>
 <script>
   const form = document.getElementById('form')
   const result = document.getElementById('result')
-  // @ts-ignore
+
   form.addEventListener('submit', function (e) {
     e.preventDefault()
-    // @ts-ignore
+
+    // Get reCAPTCHA response token
+    const recaptchaResponse = grecaptcha.getResponse()
+
+    if (!recaptchaResponse) {
+      result.innerHTML = 'Por favor, complete el reCAPTCHA'
+      result.style.display = 'block'
+      return // Stop form submission if reCAPTCHA isn't filled
+    }
+
+    // Collect form data
     const formData = new FormData(form)
+    formData.append('g-recaptcha-response', recaptchaResponse) // Add reCAPTCHA response to form data
+
     const object = Object.fromEntries(formData)
     const json = JSON.stringify(object)
-    // @ts-ignore
+
     result.innerHTML = 'Enviando...'
+    result.style.display = 'block'
 
     fetch('https://api.web3forms.com/submit', {
       method: 'POST',
@@ -191,26 +210,21 @@ if (Astro.request.method === 'POST') {
       body: json,
     })
       .then(async response => {
-        let json = await response.json()
+        const jsonResponse = await response.json()
         if (response.status == 200) {
-          // @ts-ignore
           result.innerHTML = 'El formulario ha sido enviado'
         } else {
           console.log(response)
-          // @ts-ignore
-          result.innerHTML = json.message || 'Ocurrio un error'
+          result.innerHTML = jsonResponse.message || 'Ocurrio un error'
         }
       })
       .catch(error => {
         console.log(error)
-        // @ts-ignore
         result.innerHTML = 'Ocurrio un error'
       })
       .then(function () {
-        // @ts-ignore
         form.reset()
         setTimeout(() => {
-          // @ts-ignore
           result.style.display = 'none'
         }, 3000)
       })
