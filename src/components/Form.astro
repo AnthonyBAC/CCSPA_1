@@ -16,8 +16,7 @@ if (Astro.request.method === 'POST') {
   }
 }
 //llamando key para captcha
-const siteKey = import.meta.env.RECAPTCHA_SITE_KEY
-const access_key = import.meta.env.RECAPTCHA_ACCESS_KEY
+const siteKey = import.meta.env.TURNSTILE_SITE_KEY
 ---
 
 <!-- action='https://api.web3forms.com/submit' -->
@@ -27,11 +26,6 @@ const access_key = import.meta.env.RECAPTCHA_ACCESS_KEY
   method='POST'
   class='flex flex-col gap-5 w-full justify-center items-center'
 >
-  <input
-    type='hidden'
-    name='access_key'
-    value={access_key}
-  />
   <input
     type='hidden'
     name='subject'
@@ -136,28 +130,29 @@ const access_key = import.meta.env.RECAPTCHA_ACCESS_KEY
 
   <!-- Para captcha -->
   <div
-    class='g-recaptcha'
+    class='cf-turnstile'
     data-sitekey={siteKey}
   >
   </div>
-  <p
-    class='text-[14px] font-light text-[#d3d3d330] text-center lg:text-right w-full'
-  >
-    Powered by Web3Forms
-  </p>
-  <div class='flex w-full justify-center lg:items-end items-center flex-col'>
-    <button
-      class='btn max-w-[400px] w-[150px] bg-white text-gray-900 g-recaptcha'
-      type='submit'
-      >Enviar</button
-    >
-  </div>
-  <div
-    id='result'
-    class='text-white font-[Montserrat] font-bold text-center'
-  >
-  </div>
 </form>
+<p
+  class='text-[14px] font-light text-[#d3d3d330] text-center lg:text-right w-full'
+>
+  Powered by Web3Forms
+</p>
+<div class='flex w-full justify-center lg:items-end items-center flex-col'>
+  <button
+    class='btn max-w-[400px] w-[150px] bg-white text-gray-900 g-recaptcha'
+    type='submit'
+    >Enviar</button
+  >
+</div>
+<div
+  id='result'
+  class='text-white font-[Montserrat] font-bold text-center'
+>
+</div>
+
 <script>
   document.getElementById('phone')?.addEventListener('input', function () {
     formatPhone(this as HTMLInputElement)
@@ -172,35 +167,22 @@ const access_key = import.meta.env.RECAPTCHA_ACCESS_KEY
   }
 </script>
 <script
-  src='https://www.google.com/recaptcha/api.js'
+  src='https://challenges.cloudflare.com/turnstile/v0/api.js'
   async
   defer
 ></script>
 <script>
   const form = document.getElementById('form')
   const result = document.getElementById('result')
-
+  // @ts-ignore
   form.addEventListener('submit', function (e) {
     e.preventDefault()
-
-    // Get reCAPTCHA response token
-    const recaptchaResponse = grecaptcha.getResponse()
-
-    if (!recaptchaResponse) {
-      result.innerHTML = 'Por favor, complete el reCAPTCHA'
-      result.style.display = 'block'
-      return // Stop form submission if reCAPTCHA isn't filled
-    }
-
-    // Collect form data
+    // @ts-ignore
     const formData = new FormData(form)
-    formData.append('g-recaptcha-response', recaptchaResponse) // Add reCAPTCHA response to form data
-
     const object = Object.fromEntries(formData)
     const json = JSON.stringify(object)
-
+    // @ts-ignore
     result.innerHTML = 'Enviando...'
-    result.style.display = 'block'
 
     fetch('https://api.web3forms.com/submit', {
       method: 'POST',
@@ -211,21 +193,26 @@ const access_key = import.meta.env.RECAPTCHA_ACCESS_KEY
       body: json,
     })
       .then(async response => {
-        const jsonResponse = await response.json()
+        let json = await response.json()
         if (response.status == 200) {
+          // @ts-ignore
           result.innerHTML = 'El formulario ha sido enviado'
         } else {
           console.log(response)
-          result.innerHTML = jsonResponse.message || 'Ocurrio un error'
+          // @ts-ignore
+          result.innerHTML = json.message || 'Ocurrio un error'
         }
       })
       .catch(error => {
         console.log(error)
+        // @ts-ignore
         result.innerHTML = 'Ocurrio un error'
       })
       .then(function () {
+        // @ts-ignore
         form.reset()
         setTimeout(() => {
+          // @ts-ignore
           result.style.display = 'none'
         }, 3000)
       })
