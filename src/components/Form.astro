@@ -16,16 +16,20 @@ if (Astro.request.method === 'POST') {
   }
 }
 //llamando key para captcha
-const siteKey = import.meta.env.TURNSTILE_SITE_KEY
+// const siteKey = import.meta.env.RECAPTCHA_SITE_KEY
 ---
 
-<!-- action='https://api.web3forms.com/submit' -->
 <form
   id='form'
-  action='https://usebasin.com/f/4904878e0508'
+  action='https://api.web3forms.com/submit'
   method='POST'
   class='flex flex-col gap-5 w-full justify-center items-center'
 >
+  <input
+    type='hidden'
+    name='access_key'
+    value='1037274f-825a-45c7-a6fb-16d2951f078f'
+  />
   <input
     type='hidden'
     name='subject'
@@ -129,30 +133,29 @@ const siteKey = import.meta.env.TURNSTILE_SITE_KEY
   ></textarea>
 
   <!-- Para captcha -->
+  <!-- <div
+    class='g-recaptcha'
+    data-sitekey={siteKey}
+  >
+  </div> -->
+  <p
+    class='text-[14px] font-light text-[#d3d3d330] text-center lg:text-right w-full'
+  >
+    Powered by Web3Forms
+  </p>
+  <div class='flex w-full justify-center lg:items-end items-center flex-col'>
+    <button
+      class='btn max-w-[400px] w-[150px] bg-white text-gray-900 g-recaptcha'
+      type='submit'
+      >Enviar</button
+    >
+  </div>
   <div
-    class='cf-turnstile'
-    data-sitekey='0x4AAAAAAA9pYwKY5R1y1cYn'
+    id='result'
+    class='text-white font-[Montserrat] font-bold text-center'
   >
   </div>
 </form>
-<p
-  class='text-[14px] font-light text-[#d3d3d330] text-center lg:text-right w-full'
->
-  Powered by Web3Forms
-</p>
-<div class='flex w-full justify-center lg:items-end items-center flex-col'>
-  <button
-    class='btn max-w-[400px] w-[150px] bg-white text-gray-900 g-recaptcha'
-    type='submit'
-    >Enviar</button
-  >
-</div>
-<div
-  id='result'
-  class='text-white font-[Montserrat] font-bold text-center'
->
-</div>
-
 <script>
   document.getElementById('phone')?.addEventListener('input', function () {
     formatPhone(this as HTMLInputElement)
@@ -166,8 +169,50 @@ const siteKey = import.meta.env.TURNSTILE_SITE_KEY
     input.value = value.substring(0, 11)
   }
 </script>
-<script
-  src='https://challenges.cloudflare.com/turnstile/v0/api.js'
-  async
-  defer
-></script>
+<script>
+  const form = document.getElementById('form')
+  const result = document.getElementById('result')
+  // @ts-ignore
+  form.addEventListener('submit', function (e) {
+    e.preventDefault()
+    // @ts-ignore
+    const formData = new FormData(form)
+    const object = Object.fromEntries(formData)
+    const json = JSON.stringify(object)
+    // @ts-ignore
+    result.innerHTML = 'Enviando...'
+
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+      body: json,
+    })
+      .then(async response => {
+        let json = await response.json()
+        if (response.status == 200) {
+          // @ts-ignore
+          result.innerHTML = 'El formulario ha sido enviado'
+        } else {
+          console.log(response)
+          // @ts-ignore
+          result.innerHTML = json.message || 'Ocurrio un error'
+        }
+      })
+      .catch(error => {
+        console.log(error)
+        // @ts-ignore
+        result.innerHTML = 'Ocurrio un error'
+      })
+      .then(function () {
+        // @ts-ignore
+        form.reset()
+        setTimeout(() => {
+          // @ts-ignore
+          result.style.display = 'none'
+        }, 3000)
+      })
+  })
+</script>
