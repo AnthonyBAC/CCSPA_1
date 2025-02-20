@@ -17,6 +17,7 @@ if (Astro.request.method === 'POST') {
 }
 //llamando key para captcha
 const siteKey = import.meta.env.RECAPTCHA_SITE_KEY
+const accessKey = import.meta.env.RECAPTCHA_ACCESS_KEY
 ---
 
 <!-- action='https://api.web3forms.com/submit' -->
@@ -26,6 +27,11 @@ const siteKey = import.meta.env.RECAPTCHA_SITE_KEY
   method='POST'
   class='flex flex-col gap-5 w-full justify-center items-center'
 >
+  <input
+    type='hidden'
+    name='accessKey'
+    value={accessKey}
+  />
   <input
     type='hidden'
     name='subject'
