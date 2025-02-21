@@ -79,7 +79,7 @@ if (Astro.request.method === 'POST') {
     id='email'
     type='email'
     name='email'
-    pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$'
+    pattern='[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}'
     placeholder='Email'
     required
     oninvalid="setCustomValidity('Requerido, ingresar e-mail valido')"
@@ -137,6 +137,7 @@ if (Astro.request.method === 'POST') {
   >
     Powered by Basin
   </p>
+
   <div class='flex w-full justify-center lg:items-end items-center flex-col'>
     <div
       class='cf-turnstile'
@@ -155,6 +156,16 @@ if (Astro.request.method === 'POST') {
   >
   </div>
 </form>
+<script>
+  window.onload = function () {
+    const turnstile = document.createElement('script')
+    turnstile.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js'
+    turnstile.async = true
+    turnstile.defer = true
+    document.head.appendChild(turnstile)
+  }
+</script>
+
 <script>
   document.getElementById('phone')?.addEventListener('input', function () {
     formatPhone(this as HTMLInputElement)
