@@ -1,0 +1,91 @@
+<section
+  class='h-screen bg-linear-to-t from-[#f8f9fa] via-[#e9ecef] to-[#dce6f1] p-25'
+>
+  <div class='max-w-[1440px] mx-auto flex flex-col h-full'>
+    <div
+      class='flex lg:flex-row flex-col justify-center items-center lg:p-0 w-full'
+    >
+      <h1
+        class='lg:text-5xl 2xl:text-7xl text-4xl font-extrabold h-auto w-full flex flex-col'
+      >
+        <span class='bg-gray-900 h-full p-2 text-[#fff] text-left'
+          >Galleria</span
+        >
+      </h1>
+    </div>
+
+    <div class='w-full h-full flex items-end'>
+      <div class='parte2 w-full'>
+        <img
+          src='/banner.webp'
+          alt='gallery'
+          class='img object-cover w-full h-full'
+        />
+        <img
+          src='/banner.webp'
+          alt='gallery'
+          class='img2 object-cover w-full h-full'
+        />
+
+        <img
+          src='/banner.webp'
+          alt='gallery'
+          class='img3 object-cover w-full h-full'
+        />
+        <img
+          src='/banner.webp'
+          alt='gallery'
+          class='img4 object-cover w-full h-full'
+        />
+        <img
+          src='/banner.webp'
+          alt='gallery'
+          class='img5 object-cover w-full h-full'
+        />
+        <img
+          src='/banner.webp'
+          alt='gallery'
+          class='img6 object-cover w-full h-full'
+        />
+        <div
+          class='w-full h-full flex items-center justify-center col-start-4 row-start-3'
+        >
+          <button class='text-2xl uppercase font-extrabold text-gray-900 btn'>
+            ver mas
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+  .parte2 {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+      'img  .  . .'
+      'img2 img3 . .'
+      'img4 img5 img6 .';
+  }
+
+  .img2 {
+    grid-area: img2;
+  }
+
+  .img3 {
+    grid-area: img3;
+  }
+
+  .img4 {
+    grid-area: img4;
+  }
+
+  .img5 {
+    grid-area: img5;
+  }
+
+  .img6 {
+    grid-area: img6;
+  }
+</style>
