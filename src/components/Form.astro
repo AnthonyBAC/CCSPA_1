@@ -8,20 +8,18 @@ if (Astro.request.method === 'POST') {
     const email = data.get('email')
     const select = data.get('select')
     const message = data.get('message')
-    // Do something with the data
   } catch (error) {
     if (error instanceof Error) {
       console.error(error.message)
     }
   }
 }
-//llamando key para captcha
-// const siteKey = import.meta.env.RECAPTCHA_SITE_KEY
 ---
 
 <form
   id='form'
-  action='https://api.web3forms.com/submit'
+  action='https://usebasin.com/f/4904878e0508'
+  enctype='multipart/form-data'
   method='POST'
   class='flex flex-col gap-5 w-full justify-center items-center'
 >
@@ -133,15 +131,16 @@ if (Astro.request.method === 'POST') {
   ></textarea>
 
   <!-- Para captcha -->
-  <!-- <div
-    class='g-recaptcha'
-    data-sitekey={siteKey}
+  <div
+    class='cf-turnstile'
+    data-sitekey='0x4AAAAAAA9pYwKY5R1y1cYn'
+    data-callback='javascriptCallback'
   >
-  </div> -->
+  </div>
   <p
     class='text-[14px] font-light text-[#d3d3d330] text-center lg:text-right w-full'
   >
-    Powered by Web3Forms
+    Powered by Basin
   </p>
   <div class='flex w-full justify-center lg:items-end items-center flex-col'>
     <button
@@ -182,7 +181,7 @@ if (Astro.request.method === 'POST') {
     // @ts-ignore
     result.innerHTML = 'Enviando...'
 
-    fetch('https://api.web3forms.com/submit', {
+    fetch('https://usebasin.com/f/4904878e0508', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
