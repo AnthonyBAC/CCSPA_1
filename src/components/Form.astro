@@ -156,15 +156,11 @@ if (Astro.request.method === 'POST') {
   >
   </div>
 </form>
-<script>
-  window.onload = function () {
-    const turnstile = document.createElement('script')
-    turnstile.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js'
-    turnstile.async = true
-    turnstile.defer = true
-    document.head.appendChild(turnstile)
-  }
-</script>
+<script
+  src='https://challenges.cloudflare.com/turnstile/v0/api.js'
+  async
+  defer
+></script>
 
 <script>
   document.getElementById('phone')?.addEventListener('input', function () {
