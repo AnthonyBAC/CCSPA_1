@@ -167,23 +167,7 @@ if (Astro.request.method === 'POST') {
   async
   defer
 ></script>
-<script>
-  let isTurnstileVerified = false
 
-  function onTurnstileSuccess(token) {
-    isTurnstileVerified = true
-    document.getElementById('captchaError').style.display = 'none' // Ocultar mensaje de error
-  }
-
-  document
-    .getElementById('myForm')
-    .addEventListener('submit', function (event) {
-      if (!isTurnstileVerified) {
-        event.preventDefault() // Evitar el envío
-        document.getElementById('captchaError').style.display = 'block' // Mostrar mensaje de error
-      }
-    })
-</script>
 <script>
   document.getElementById('phone')?.addEventListener('input', function () {
     formatPhone(this as HTMLInputElement)
@@ -200,15 +184,15 @@ if (Astro.request.method === 'POST') {
 <script>
   const form = document.getElementById('form')
   const result = document.getElementById('result')
-
+  // @ts-ignore
   form.addEventListener('submit', function (e) {
     e.preventDefault()
-
+    // @ts-ignore
     const formData = new FormData(form)
-    const json = JSON.stringify(Object.fromEntries(formData))
-
+    const object = Object.fromEntries(formData)
+    const json = JSON.stringify(object)
+    // @ts-ignore
     result.innerHTML = 'Enviando...'
-    result.style.display = 'block'
 
     fetch('https://usebasin.com/f/4904878e0508', {
       method: 'POST',
@@ -218,18 +202,27 @@ if (Astro.request.method === 'POST') {
       },
       body: json,
     })
-      .then(response => response.json())
-      .then(data => {
-        result.innerHTML = response.ok
-          ? 'El formulario ha sido enviado'
-          : 'Ocurrió un error'
+      .then(async response => {
+        let json = await response.json()
+        if (response.status == 200) {
+          // @ts-ignore
+          result.innerHTML = 'El formulario ha sido enviado'
+        } else {
+          console.log(response)
+          // @ts-ignore
+          result.innerHTML = json.message || 'Ocurrio un error'
+        }
       })
-      .catch(() => {
-        result.innerHTML = 'Ocurrió un error'
+      .catch(error => {
+        console.log(error)
+        // @ts-ignore
+        result.innerHTML = 'Ocurrio un error'
       })
-      .finally(() => {
+      .then(function () {
+        // @ts-ignore
         form.reset()
         setTimeout(() => {
+          // @ts-ignore
           result.style.display = 'none'
         }, 3000)
       })
