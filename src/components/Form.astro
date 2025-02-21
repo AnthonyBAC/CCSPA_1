@@ -39,7 +39,7 @@ if (Astro.request.method === 'POST') {
     id='name'
     type='text'
     name='name'
-    pattern='[a-zA-ZÀ-ÿ\s]{1,40}'
+    pattern='[a-zA-z]{1,40}'
     required
     maxlength='50'
     minlength='2'
@@ -53,7 +53,7 @@ if (Astro.request.method === 'POST') {
     id='lastName'
     type='text'
     name='lastName'
-    pattern='[a-zA-ZÀ-ÿ\s]{1,40}'
+    pattern='[a-zA-z]{1,40}'
     placeholder='Apellido'
     required
     maxlength='50'
@@ -131,18 +131,18 @@ if (Astro.request.method === 'POST') {
   ></textarea>
 
   <!-- Para captcha -->
-  <div
-    class='cf-turnstile'
-    data-sitekey='0x4AAAAAAA9pYwKY5R1y1cYn'
-    data-callback='javascriptCallback'
-  >
-  </div>
+
   <p
     class='text-[14px] font-light text-[#d3d3d330] text-center lg:text-right w-full'
   >
     Powered by Basin
   </p>
   <div class='flex w-full justify-center lg:items-end items-center flex-col'>
+    <div
+      class='cf-turnstile'
+      data-sitekey='0x4AAAAAAA9pYwKY5R1y1cYn'
+    >
+    </div>
     <button
       class='btn max-w-[400px] w-[150px] bg-white text-gray-900 g-recaptcha'
       type='submit'
