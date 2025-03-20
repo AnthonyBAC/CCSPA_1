@@ -1,0 +1,68 @@
+---
+import HeaderItems from '../components/HeaderItems.astro'
+import Footer from '../components/Footer.astro'
+import Navigation from '../components/Navigation.astro'
+import { SEO } from 'astro-seo'
+
+import '../styles/global.css'
+---
+
+<!doctype html>
+<html lang='es'>
+  <head>
+    <SEO
+      title='CentralClima SpA - Lo mejor en climatización'
+      openGraph={{
+        basic: {
+          title: 'CentralClima SpA',
+          type: 'image/svg',
+          image: '/logo.svg',
+          url: 'https://centralclimaspa.cl',
+        },
+        optional: {
+          description:
+            'Central Clima SpA - Soluciones Aire Acondicionado integrales para empresas y Hogares - Con mas de 20 años de experiencia en el mercado.',
+        },
+      }}
+    />
+    <link
+      rel='icon'
+      href='/Faviconlogo.ico'
+    />
+
+    <script
+      defer
+      src='https://unpkg.com/tailwindcss-intersect@2.x.x/dist/observer.min.js'
+    ></script>
+    <meta charset='UTF-8' />
+    <title>CentralClima SPA</title>
+  </head>
+  <script>
+    window.addEventListener('hashchange', () => {
+      // @ts-ignore
+      history.replaceState(null, null, window.location.pathname)
+    })
+  </script>
+  <body>
+    <Navigation />
+    <HeaderItems />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
+
+<style>
+  html,
+  body {
+    color: #101820;
+    background-color: white;
+    scroll-behavior: smooth;
+  }
+
+  main {
+    width: 1440px;
+    margin: 0 auto;
+  }
+</style>
