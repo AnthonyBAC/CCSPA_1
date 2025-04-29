@@ -1,236 +1,237 @@
 ---
-if (Astro.request.method === 'POST') {
-  try {
-    const data = await Astro.request.formData()
-    const name = data.get('name')
-    const lastName = data.get('lastName')
-    const phone = data.get('phone')
-    const email = data.get('email')
-    const select = data.get('select')
-    const message = data.get('message')
-  } catch (error) {
-    if (error instanceof Error) {
-      console.error(error.message)
-    }
-  }
-}
+// if (Astro.request.method === 'POST') {
+//   try {
+//     const data = await Astro.request.formData()
+//     const name = data.get('name')
+//     const lastName = data.get('lastName')
+//     const phone = data.get('phone')
+//     const email = data.get('email')
+//     const select = data.get('select')
+//     const message = data.get('message')
+//   } catch (error) {
+//     if (error instanceof Error) {
+//       console.error(error.message)
+//     }
+//   }
+// }
+// ---
+
+// <form
+//   id='form'
+//   enctype='multipart/form-data'
+//   class='flex flex-col gap-5 w-full lg:items-start justify-center items-center'
+// >
+//   <input
+//     type='hidden'
+//     name='access_key'
+//     value='1037274f-825a-45c7-a6fb-16d2951f078f'
+//   />
+//   <input
+//     type='hidden'
+//     name='subject'
+//     value='Contacto desde PAGINA WEB'
+//     class='uppercase'
+//   />
+
+//   <input
+//     id='name'
+//     type='text'
+//     name='name'
+//     pattern='[a-zA-z]{1,40}'
+//     required
+//     maxlength='50'
+//     minlength='2'
+//     placeholder='Nombre'
+//     oninvalid="setCustomValidity('Requerido, solo letras y espacios')"
+//     oninput="setCustomValidity('')"
+//     class='input input-bordered input-sm w-full max-w-xs bg-white'
+//   />
+
+//   <input
+//     id='lastName'
+//     type='text'
+//     name='lastName'
+//     pattern='[a-zA-z]{1,40}'
+//     placeholder='Apellido'
+//     required
+//     maxlength='50'
+//     minlength='2'
+//     oninvalid="setCustomValidity('Requerido, solo letras y espacios')"
+//     oninput="setCustomValidity('')"
+//     class='input input-bordered input-sm w-full max-w-xs bg-white'
+//   />
+//   <input
+//     id='phone'
+//     type='tel'
+//     name='phone'
+//     placeholder='Nr° Celular'
+//     maxlength='12'
+//     min='9'
+//     pattern='[9]{1}-[0-9]{4}-[0-9]{4}'
+//     required
+//     oninvalid="setCustomValidity('Requerido, formato 9 dígitos sin espacios')"
+//     oninput="setCustomValidity('')"
+//     class='tel input input-bordered input-sm w-full max-w-xs bg-white'
+//   />
+//   <input
+//     id='email'
+//     type='email'
+//     name='email'
+//     pattern='[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}'
+//     placeholder='Email'
+//     required
+//     oninvalid="setCustomValidity('Requerido, ingresar e-mail valido')"
+//     oninput="setCustomValidity('')"
+//     class='input input-sm w-full max-w-xs bg-white'
+//   />
+//   <select
+//     id='select'
+//     name='select'
+//     id='select'
+//     class='select select-bordered select-sm w-full max-w-xs px-3 bg-white'
+//   >
+//     <option
+//       value='Tipo de lugar'
+//       hidden
+//       disabled
+//       selected
+//       class='p-0'
+//       >Tipo de lugar</option
+//     >
+//     <option
+//       value='Casa'
+//       class='bg-white'
+//       >Casa</option
+//     >
+//     <option
+//       value='Oficina'
+//       class='bg-white'
+//       >Oficina</option
+//     >
+//     <option
+//       value='Departamento'
+//       class='bg-white'
+//       >Departamento</option
+//     >
+//     <option
+//       value='Otro'
+//       class='bg-white'
+//       >Otro</option
+//     >
+//   </select>
+//   <textarea
+//     id='message'
+//     name='message'
+//     placeholder='Message'
+//     rows='4'
+//     cols='50'
+//     class='input input-bordered input-sm w-full max-w-xs max-h-[200px] h-[100px] py-2 resize-none bg-white'
+//   ></textarea>
+
+//   <!-- Para captcha -->
+
+//   <div class='flex w-full justify-center lg:items-end items-center flex-col'>
+//     <div
+//       class='cf-turnstile'
+//       data-sitekey='0x4AAAAAAA9pYwKY5R1y1cYn'
+//     >
+//     </div>
+//     <p
+//       id='captchaError'
+//       style='color: red; display: none;'
+//     >
+//       Por favor, completa el CAPTCHA.
+//     </p>
+//     <button
+//       class='btn max-w-[400px] w-[150px] bg-white text-gray-900 g-recaptcha'
+//       type='submit'
+//       >Enviar</button
+//     >
+//   </div>
+//   <p
+//     class='text-[14px] font-light text-[#d3d3d330] text-center lg:text-right w-full'
+//   >
+//     Powered by <a
+//       href='https://usebasin.com'
+//       class='underline'
+//       >Basin</a
+//     >
+//   </p>
+//   <div
+//     id='result'
+//     class='text-white font-[Montserrat] font-bold text-center'
+//   >
+//   </div>
+// </form>
+// <script
+//   src='https://challenges.cloudflare.com/turnstile/v0/api.js'
+//   async
+//   defer
+// ></script>
+
+// <script>
+//   document.getElementById('phone')?.addEventListener('input', function () {
+//     formatPhone(this as HTMLInputElement)
+//   })
+//   function formatPhone(input: HTMLInputElement) {
+//     let value = input.value.replace(/\D/g, '')
+//     if (value.length > 1)
+//       value = value.substring(0, 1) + '-' + value.substring(1)
+//     if (value.length > 6)
+//       value = value.substring(0, 6) + '-' + value.substring(6)
+//     input.value = value.substring(0, 11)
+//   }
+// </script>
+// <script>
+//   const form = document.getElementById('form')
+//   const result = document.getElementById('result')
+
+//   form.addEventListener('submit', async function (e) {
+//     e.preventDefault()
+
+//     const captchaResponse = document.querySelector(
+//       'input[name="cf-turnstile-response"]',
+//     )?.value
+
+//     if (!captchaResponse) {
+//       document.getElementById('captchaError').style.display = 'block'
+//       return
+//     }
+
+//     const formData = new FormData(form)
+//     const object = Object.fromEntries(formData.entries())
+//     const json = JSON.stringify(object)
+
+//     result.innerHTML = 'Enviando...'
+//     document.getElementById('captchaError').style.display = 'none'
+
+//     try {
+//       const response = await fetch('https://usebasin.com/f/4904878e0508', {
+//         method: 'POST',
+//         headers: {
+//           'Content-Type': 'application/json',
+//           Accept: 'application/json',
+//         },
+//         body: json,
+//       })
+
+//       const resJson = await response.json()
+
+//       if (response.ok) {
+//         result.innerHTML = '✅ Formulario enviado con éxito'
+//       } else {
+//         console.log(resJson)
+//         result.innerHTML = resJson.message || '❌ Error al enviar'
+//       }
+//     } catch (err) {
+//       console.error(err)
+//       result.innerHTML = '❌ Error al enviar el formulario'
+//     }
+
+//     form.reset()
+//     setTimeout(() => {
+//       result.innerHTML = ''
+//     }, 3000)
+//   })
+// </script>
 ---
-
-<form
-  id='form'
-  enctype='multipart/form-data'
-  class='flex flex-col gap-5 w-full lg:items-start justify-center items-center'
->
-  <input
-    type='hidden'
-    name='access_key'
-    value='1037274f-825a-45c7-a6fb-16d2951f078f'
-  />
-  <input
-    type='hidden'
-    name='subject'
-    value='Contacto desde PAGINA WEB'
-    class='uppercase'
-  />
-
-  <input
-    id='name'
-    type='text'
-    name='name'
-    pattern='[a-zA-z]{1,40}'
-    required
-    maxlength='50'
-    minlength='2'
-    placeholder='Nombre'
-    oninvalid="setCustomValidity('Requerido, solo letras y espacios')"
-    oninput="setCustomValidity('')"
-    class='input input-bordered input-sm w-full max-w-xs bg-white'
-  />
-
-  <input
-    id='lastName'
-    type='text'
-    name='lastName'
-    pattern='[a-zA-z]{1,40}'
-    placeholder='Apellido'
-    required
-    maxlength='50'
-    minlength='2'
-    oninvalid="setCustomValidity('Requerido, solo letras y espacios')"
-    oninput="setCustomValidity('')"
-    class='input input-bordered input-sm w-full max-w-xs bg-white'
-  />
-  <input
-    id='phone'
-    type='tel'
-    name='phone'
-    placeholder='Nr° Celular'
-    maxlength='12'
-    min='9'
-    pattern='[9]{1}-[0-9]{4}-[0-9]{4}'
-    required
-    oninvalid="setCustomValidity('Requerido, formato 9 dígitos sin espacios')"
-    oninput="setCustomValidity('')"
-    class='tel input input-bordered input-sm w-full max-w-xs bg-white'
-  />
-  <input
-    id='email'
-    type='email'
-    name='email'
-    pattern='[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}'
-    placeholder='Email'
-    required
-    oninvalid="setCustomValidity('Requerido, ingresar e-mail valido')"
-    oninput="setCustomValidity('')"
-    class='input input-sm w-full max-w-xs bg-white'
-  />
-  <select
-    id='select'
-    name='select'
-    id='select'
-    class='select select-bordered select-sm w-full max-w-xs px-3 bg-white'
-  >
-    <option
-      value='Tipo de lugar'
-      hidden
-      disabled
-      selected
-      class='p-0'
-      >Tipo de lugar</option
-    >
-    <option
-      value='Casa'
-      class='bg-white'
-      >Casa</option
-    >
-    <option
-      value='Oficina'
-      class='bg-white'
-      >Oficina</option
-    >
-    <option
-      value='Departamento'
-      class='bg-white'
-      >Departamento</option
-    >
-    <option
-      value='Otro'
-      class='bg-white'
-      >Otro</option
-    >
-  </select>
-  <textarea
-    id='message'
-    name='message'
-    placeholder='Message'
-    rows='4'
-    cols='50'
-    class='input input-bordered input-sm w-full max-w-xs max-h-[200px] h-[100px] py-2 resize-none bg-white'
-  ></textarea>
-
-  <!-- Para captcha -->
-
-  <div class='flex w-full justify-center lg:items-end items-center flex-col'>
-    <div
-      class='cf-turnstile'
-      data-sitekey='0x4AAAAAAA9pYwKY5R1y1cYn'
-    >
-    </div>
-    <p
-      id='captchaError'
-      style='color: red; display: none;'
-    >
-      Por favor, completa el CAPTCHA.
-    </p>
-    <button
-      class='btn max-w-[400px] w-[150px] bg-white text-gray-900 g-recaptcha'
-      type='submit'
-      >Enviar</button
-    >
-  </div>
-  <p
-    class='text-[14px] font-light text-[#d3d3d330] text-center lg:text-right w-full'
-  >
-    Powered by <a
-      href='https://usebasin.com'
-      class='underline'
-      >Basin</a
-    >
-  </p>
-  <div
-    id='result'
-    class='text-white font-[Montserrat] font-bold text-center'
-  >
-  </div>
-</form>
-<script
-  src='https://challenges.cloudflare.com/turnstile/v0/api.js'
-  async
-  defer
-></script>
-
-<script>
-  document.getElementById('phone')?.addEventListener('input', function () {
-    formatPhone(this as HTMLInputElement)
-  })
-  function formatPhone(input: HTMLInputElement) {
-    let value = input.value.replace(/\D/g, '')
-    if (value.length > 1)
-      value = value.substring(0, 1) + '-' + value.substring(1)
-    if (value.length > 6)
-      value = value.substring(0, 6) + '-' + value.substring(6)
-    input.value = value.substring(0, 11)
-  }
-</script>
-<script>
-  const form = document.getElementById('form')
-  const result = document.getElementById('result')
-
-  form.addEventListener('submit', async function (e) {
-    e.preventDefault()
-
-    const captchaResponse = document.querySelector(
-      'input[name="cf-turnstile-response"]',
-    )?.value
-
-    if (!captchaResponse) {
-      document.getElementById('captchaError').style.display = 'block'
-      return
-    }
-
-    const formData = new FormData(form)
-    const object = Object.fromEntries(formData.entries())
-    const json = JSON.stringify(object)
-
-    result.innerHTML = 'Enviando...'
-    document.getElementById('captchaError').style.display = 'none'
-
-    try {
-      const response = await fetch('https://usebasin.com/f/4904878e0508', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
-        },
-        body: json,
-      })
-
-      const resJson = await response.json()
-
-      if (response.ok) {
-        result.innerHTML = '✅ Formulario enviado con éxito'
-      } else {
-        console.log(resJson)
-        result.innerHTML = resJson.message || '❌ Error al enviar'
-      }
-    } catch (err) {
-      console.error(err)
-      result.innerHTML = '❌ Error al enviar el formulario'
-    }
-
-    form.reset()
-    setTimeout(() => {
-      result.innerHTML = ''
-    }, 3000)
-  })
-</script>
