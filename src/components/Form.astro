@@ -18,9 +18,7 @@ if (Astro.request.method === 'POST') {
 
 <form
   id='form'
-  action='https://usebasin.com/f/4904878e0508'
   enctype='multipart/form-data'
-  method='POST'
   class='flex flex-col gap-5 w-full lg:items-start justify-center items-center'
 >
   <input
@@ -187,47 +185,52 @@ if (Astro.request.method === 'POST') {
 <script>
   const form = document.getElementById('form')
   const result = document.getElementById('result')
-  // @ts-ignore
-  form.addEventListener('submit', function (e) {
-    e.preventDefault()
-    // @ts-ignore
-    const formData = new FormData(form)
-    const object = Object.fromEntries(formData)
-    const json = JSON.stringify(object)
-    // @ts-ignore
-    result.innerHTML = 'Enviando...'
 
-    fetch('https://usebasin.com/f/4904878e0508', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
-      },
-      body: json,
-    })
-      .then(async response => {
-        let json = await response.json()
-        if (response.status == 200) {
-          // @ts-ignore
-          result.innerHTML = 'El formulario ha sido enviado'
-        } else {
-          console.log(response)
-          // @ts-ignore
-          result.innerHTML = json.message || 'Ocurrio un error'
-        }
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault()
+
+    const captchaResponse = document.querySelector(
+      'input[name="cf-turnstile-response"]',
+    )?.value
+
+    if (!captchaResponse) {
+      document.getElementById('captchaError').style.display = 'block'
+      return
+    }
+
+    const formData = new FormData(form)
+    const object = Object.fromEntries(formData.entries())
+    const json = JSON.stringify(object)
+
+    result.innerHTML = 'Enviando...'
+    document.getElementById('captchaError').style.display = 'none'
+
+    try {
+      const response = await fetch('https://usebasin.com/f/4904878e0508', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: json,
       })
-      .catch(error => {
-        console.log(error)
-        // @ts-ignore
-        result.innerHTML = 'Ocurrio un error'
-      })
-      .then(function () {
-        // @ts-ignore
-        form.reset()
-        setTimeout(() => {
-          // @ts-ignore
-          result.style.display = 'none'
-        }, 3000)
-      })
+
+      const resJson = await response.json()
+
+      if (response.ok) {
+        result.innerHTML = '✅ Formulario enviado con éxito'
+      } else {
+        console.log(resJson)
+        result.innerHTML = resJson.message || '❌ Error al enviar'
+      }
+    } catch (err) {
+      console.error(err)
+      result.innerHTML = '❌ Error al enviar el formulario'
+    }
+
+    form.reset()
+    setTimeout(() => {
+      result.innerHTML = ''
+    }, 3000)
   })
 </script>
