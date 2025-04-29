@@ -199,8 +199,6 @@ if (Astro.request.method === 'POST') {
     }
 
     const formData = new FormData(form)
-    const object = Object.fromEntries(formData.entries())
-    const json = JSON.stringify(object)
 
     result.innerHTML = 'Enviando...'
     document.getElementById('captchaError').style.display = 'none'
@@ -208,20 +206,15 @@ if (Astro.request.method === 'POST') {
     try {
       const response = await fetch('https://usebasin.com/f/4904878e0508', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
-        },
-        body: json,
+        body: formData,
       })
-
-      const resJson = await response.json()
 
       if (response.ok) {
         result.innerHTML = '✅ Formulario enviado con éxito'
       } else {
-        console.log(resJson)
-        result.innerHTML = resJson.message || '❌ Error al enviar'
+        const text = await response.text()
+        console.log(text)
+        result.innerHTML = '❌ Error al enviar'
       }
     } catch (err) {
       console.error(err)
